@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="142px" height="142px" viewBox="0 0 142 142" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>全局空状态</title>
+    <defs>
+        <filter x="-6.2%" y="-16.7%" width="112.5%" height="133.3%" filterUnits="objectBoundingBox" id="filter-1">
+            <feGaussianBlur stdDeviation="2" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <linearGradient x1="50%" y1="11.977276%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#EAF0F7" offset="0%"></stop>
+            <stop stop-color="#BBCBDB" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="65.6603986%" y1="77.4302321%" x2="65.6603986%" y2="15.0745245%" id="linearGradient-3">
+            <stop stop-color="#DFE4EA" offset="0%"></stop>
+            <stop stop-color="#D1DBE8" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-4" points="71 32.0422535 23 50.0422535 71 68.0422535"></polygon>
+        <linearGradient x1="30.4473017%" y1="38.5861002%" x2="100%" y2="78.125%" id="linearGradient-5">
+            <stop stop-color="#EAF0F7" offset="0%"></stop>
+            <stop stop-color="#B8C7DC" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="83.2570964%" y1="46.1001412%" x2="1.45669993%" y2="46.1001412%" id="linearGradient-6">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#F3F6F9" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-7" points="119 32.0422535 71 50.0422535 119 68.0422535"></polygon>
+        <linearGradient x1="50%" y1="11.977276%" x2="50%" y2="100%" id="linearGradient-8">
+            <stop stop-color="#DCE2E9" offset="0%"></stop>
+            <stop stop-color="#B0C2D6" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="72.2222222%" y1="24.0790949%" x2="27.7777778%" y2="59.9813181%" id="linearGradient-9">
+            <stop stop-color="#DFE4EA" offset="0%"></stop>
+            <stop stop-color="#D1DBE8" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-10" points="0 18 0 72 48 54 48 0"></polygon>
+        <filter x="-15.3%" y="-23.7%" width="130.5%" height="147.4%" filterUnits="objectBoundingBox" id="filter-12">
+            <feGaussianBlur stdDeviation="3" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <linearGradient x1="50%" y1="11.977276%" x2="50%" y2="100%" id="linearGradient-13">
+            <stop stop-color="#EAF0F7" offset="0%"></stop>
+            <stop stop-color="#D9E2EC" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="72.2222222%" y1="24.0790949%" x2="27.7777778%" y2="59.9813181%" id="linearGradient-14">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#D8E1EE" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-15" points="0 0 0 54 48 72 48 18"></polygon>
+        <filter x="-15.3%" y="-21.4%" width="130.5%" height="142.9%" filterUnits="objectBoundingBox" id="filter-17">
+            <feGaussianBlur stdDeviation="3" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <linearGradient x1="30.4473017%" y1="41.5826633%" x2="53.9511259%" y2="58.693411%" id="linearGradient-18">
+            <stop stop-color="#EAF0F7" offset="0%"></stop>
+            <stop stop-color="#DEE6EE" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="83.2570964%" y1="46.1001412%" x2="1.45669993%" y2="46.1001412%" id="linearGradient-19">
+            <stop stop-color="#DFE4EA" offset="0%"></stop>
+            <stop stop-color="#F1F4F9" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-20" points="71 68.0422535 82 88.0422535 130 70.0422535 119 50.0422535"></polygon>
+        <linearGradient x1="83.2570964%" y1="46.1001412%" x2="1.45669993%" y2="46.1001412%" id="linearGradient-21">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#F3F6F9" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-22" points="23 50.0422535 12 70.0422535 60 88.0422535 71 68.0422535"></polygon>
+        <radialGradient cx="38.8142884%" cy="57.5957463%" fx="38.8142884%" fy="57.5957463%" r="73.7298432%" id="radialGradient-23">
+            <stop stop-color="#82A6DB" offset="0%"></stop>
+            <stop stop-color="#95A6C1" offset="0%"></stop>
+            <stop stop-color="#4F627F" offset="99.9313767%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="内容--Content" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="空白页3" transform="translate(-514.000000, -625.000000)">
+            <g id="全局空状态" transform="translate(514.000000, 625.000000)">
+                <rect id="矩形" fill="#D8D8D8" opacity="0" x="0" y="0" width="142" height="142"></rect>
+                <polygon id="bg" fill="#697B91" opacity="0.600000024" filter="url(#filter-1)" points="71 92.0422535 23 110.042254 71 128.042254 119 110.042254"></polygon>
+                <g id="L-">
+                    <use fill="url(#linearGradient-2)" xlink:href="#path-4"></use>
+                    <use fill-opacity="0.6" fill="url(#linearGradient-3)" xlink:href="#path-4"></use>
+                </g>
+                <g id="R" transform="translate(95.000000, 50.042254) scale(-1, 1) translate(-95.000000, -50.042254) ">
+                    <use fill-opacity="0.7" fill="url(#linearGradient-5)" xlink:href="#path-7"></use>
+                    <use fill-opacity="0.45" fill="url(#linearGradient-6)" xlink:href="#path-7"></use>
+                </g>
+                <g id="right" transform="translate(71.000000, 50.042254)">
+                    <mask id="mask-11" fill="white">
+                        <use xlink:href="#path-10"></use>
+                    </mask>
+                    <g id="路径">
+                        <use fill="url(#linearGradient-8)" xlink:href="#path-10"></use>
+                        <use fill-opacity="0.6" fill="url(#linearGradient-9)" xlink:href="#path-10"></use>
+                    </g>
+                    <polygon id="右" fill="#BAC7DA" filter="url(#filter-12)" mask="url(#mask-11)" points="12 20 23 40 71 22 60 2"></polygon>
+                </g>
+                <g id="left-" transform="translate(23.000000, 50.042254)">
+                    <mask id="mask-16" fill="white">
+                        <use xlink:href="#path-15"></use>
+                    </mask>
+                    <g id="路径-4备份">
+                        <use fill="url(#linearGradient-13)" xlink:href="#path-15"></use>
+                        <use fill-opacity="0.6" fill="url(#linearGradient-14)" xlink:href="#path-15"></use>
+                    </g>
+                    <polygon id="左" fill="#BAC7DA" filter="url(#filter-17)" mask="url(#mask-16)" points="-4.4408921e-14 0 -11 20 41 42 48 18"></polygon>
+                </g>
+                <g id="右">
+                    <use fill-opacity="0.7" fill="url(#linearGradient-18)" xlink:href="#path-20"></use>
+                    <use fill-opacity="0.6" fill="url(#linearGradient-19)" xlink:href="#path-20"></use>
+                </g>
+                <g id="左">
+                    <use fill="url(#linearGradient-18)" xlink:href="#path-22"></use>
+                    <use fill-opacity="0.6" fill="url(#linearGradient-21)" xlink:href="#path-22"></use>
+                </g>
+                <g id="元素" transform="translate(22.464789, 12.000000)">
+                    <path d="M101.492958,35.915493 L101.492437,37.041493 L102.619718,37.0422535 L102.619718,38.1690141 L101.492437,38.168493 L101.492958,39.2957746 L100.366197,39.2957746 L100.365437,38.168493 L99.2394366,38.1690141 L99.2394366,37.0422535 L100.365437,37.041493 L100.366197,35.915493 L101.492958,35.915493 Z" id="合并形状-copy-11备份" fill="#536583"></path>
+                    <path d="M2.33802817,20.1408451 L2.33750704,21.2668451 L3.46478873,21.2676056 L3.46478873,22.3943662 L2.33750704,22.3938451 L2.33802817,23.5211268 L1.21126761,23.5211268 L1.21050704,22.3938451 L0.0845070423,22.3943662 L0.0845070423,21.2676056 L1.21050704,21.2668451 L1.21126761,20.1408451 L2.33802817,20.1408451 Z" id="合并形状-copy-11备份-2" fill="#586986"></path>
+                    <circle id="椭圆形" fill="url(#radialGradient-23)" cx="39.5352113" cy="42.0422535" r="6"></circle>
+                    <circle id="椭圆形备份" fill="url(#radialGradient-23)" cx="84.0422535" cy="28.5492958" r="4.50704225"></circle>
+                    <circle id="椭圆形备份-3" fill="url(#radialGradient-23)" cx="33.0070423" cy="2.5" r="2.5"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

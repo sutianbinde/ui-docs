@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Dialog 对话框 | megvii-ui</title>
+    <meta name="description" content="A UI Lib Based On Vue">
+    <link rel="icon" href="https://assets.megvii.com/static/favicon.ico">
+    
+    <link rel="preload" href="/ui-docs/assets/css/0.styles.70d7240c.css" as="style"><link rel="preload" href="/ui-docs/assets/js/app.57f4804f.js" as="script"><link rel="preload" href="/ui-docs/assets/js/2.fd898690.js" as="script"><link rel="preload" href="/ui-docs/assets/js/28.d060eea9.js" as="script"><link rel="prefetch" href="/ui-docs/assets/js/10.3be4f577.js"><link rel="prefetch" href="/ui-docs/assets/js/11.7ad6142c.js"><link rel="prefetch" href="/ui-docs/assets/js/12.a585499f.js"><link rel="prefetch" href="/ui-docs/assets/js/13.3c3ba920.js"><link rel="prefetch" href="/ui-docs/assets/js/14.b05e49d8.js"><link rel="prefetch" href="/ui-docs/assets/js/15.1bc1ac4a.js"><link rel="prefetch" href="/ui-docs/assets/js/16.7d082e10.js"><link rel="prefetch" href="/ui-docs/assets/js/17.7fcbc7fa.js"><link rel="prefetch" href="/ui-docs/assets/js/18.dbaa6115.js"><link rel="prefetch" href="/ui-docs/assets/js/19.147f7a3e.js"><link rel="prefetch" href="/ui-docs/assets/js/20.0113ee44.js"><link rel="prefetch" href="/ui-docs/assets/js/21.ce107821.js"><link rel="prefetch" href="/ui-docs/assets/js/22.cbdcdf80.js"><link rel="prefetch" href="/ui-docs/assets/js/23.4cae9cc0.js"><link rel="prefetch" href="/ui-docs/assets/js/24.811b7c7f.js"><link rel="prefetch" href="/ui-docs/assets/js/25.94aa4737.js"><link rel="prefetch" href="/ui-docs/assets/js/26.cb193757.js"><link rel="prefetch" href="/ui-docs/assets/js/27.8ce66d31.js"><link rel="prefetch" href="/ui-docs/assets/js/29.89d74c80.js"><link rel="prefetch" href="/ui-docs/assets/js/3.71252532.js"><link rel="prefetch" href="/ui-docs/assets/js/30.3ca85f4e.js"><link rel="prefetch" href="/ui-docs/assets/js/31.828c4c9a.js"><link rel="prefetch" href="/ui-docs/assets/js/32.2ce5bab0.js"><link rel="prefetch" href="/ui-docs/assets/js/33.3b33e256.js"><link rel="prefetch" href="/ui-docs/assets/js/34.034a29d8.js"><link rel="prefetch" href="/ui-docs/assets/js/35.6d5569dd.js"><link rel="prefetch" href="/ui-docs/assets/js/36.6079fce4.js"><link rel="prefetch" href="/ui-docs/assets/js/37.990eea8a.js"><link rel="prefetch" href="/ui-docs/assets/js/38.ecba6181.js"><link rel="prefetch" href="/ui-docs/assets/js/39.fbabf13a.js"><link rel="prefetch" href="/ui-docs/assets/js/4.8f8596b3.js"><link rel="prefetch" href="/ui-docs/assets/js/40.ab48f1d6.js"><link rel="prefetch" href="/ui-docs/assets/js/41.5cc8cdb3.js"><link rel="prefetch" href="/ui-docs/assets/js/42.ac5b1514.js"><link rel="prefetch" href="/ui-docs/assets/js/43.cb1554b0.js"><link rel="prefetch" href="/ui-docs/assets/js/44.d850166b.js"><link rel="prefetch" href="/ui-docs/assets/js/45.39afc696.js"><link rel="prefetch" href="/ui-docs/assets/js/46.77e7b44c.js"><link rel="prefetch" href="/ui-docs/assets/js/47.30fed8c3.js"><link rel="prefetch" href="/ui-docs/assets/js/48.99695272.js"><link rel="prefetch" href="/ui-docs/assets/js/49.1a0e1840.js"><link rel="prefetch" href="/ui-docs/assets/js/5.a30b0fef.js"><link rel="prefetch" href="/ui-docs/assets/js/50.16906967.js"><link rel="prefetch" href="/ui-docs/assets/js/51.07821da9.js"><link rel="prefetch" href="/ui-docs/assets/js/52.62056504.js"><link rel="prefetch" href="/ui-docs/assets/js/53.2238c73b.js"><link rel="prefetch" href="/ui-docs/assets/js/54.525ed759.js"><link rel="prefetch" href="/ui-docs/assets/js/55.31c69745.js"><link rel="prefetch" href="/ui-docs/assets/js/56.d277f2a4.js"><link rel="prefetch" href="/ui-docs/assets/js/57.0f07b334.js"><link rel="prefetch" href="/ui-docs/assets/js/58.c772aef5.js"><link rel="prefetch" href="/ui-docs/assets/js/59.555712c3.js"><link rel="prefetch" href="/ui-docs/assets/js/6.6dbcba45.js"><link rel="prefetch" href="/ui-docs/assets/js/60.5ab569a4.js"><link rel="prefetch" href="/ui-docs/assets/js/61.1d556865.js"><link rel="prefetch" href="/ui-docs/assets/js/62.da048dd8.js"><link rel="prefetch" href="/ui-docs/assets/js/63.cd904f38.js"><link rel="prefetch" href="/ui-docs/assets/js/7.33d2fc19.js"><link rel="prefetch" href="/ui-docs/assets/js/8.34ece04a.js"><link rel="prefetch" href="/ui-docs/assets/js/9.051b2519.js">
+    <link rel="stylesheet" href="/ui-docs/assets/css/0.styles.70d7240c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/ui-docs/" class="home-link router-link-active"><!----> <span class="site-name">megvii-ui</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/ui-docs/component/guide.html" class="nav-link">组件文档</a></div><div class="nav-item"><a href="/ui-docs/log/" class="nav-link">更新日志</a></div><div class="nav-item"><a href="https://wiki.megvii-inc.com/pages/viewpage.action?pageId=156851062" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  贡献指南
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://git-pd.megvii-inc.com/ai-guardians/sst-fe/base-library-group/megvii-ui" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  工程地址
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="2.0.11" class="dropdown-title"><span class="title">2.0.11</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ui-docs/" class="nav-link">2.0.11</a></li><li class="dropdown-item"><!----> <a href="http://10.199.1.17/megvii-ui/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  1.x
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/ui-docs/component/guide.html" class="nav-link">组件文档</a></div><div class="nav-item"><a href="/ui-docs/log/" class="nav-link">更新日志</a></div><div class="nav-item"><a href="https://wiki.megvii-inc.com/pages/viewpage.action?pageId=156851062" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  贡献指南
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://git-pd.megvii-inc.com/ai-guardians/sst-fe/base-library-group/megvii-ui" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  工程地址
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="2.0.11" class="dropdown-title"><span class="title">2.0.11</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/ui-docs/" class="nav-link">2.0.11</a></li><li class="dropdown-item"><!----> <a href="http://10.199.1.17/megvii-ui/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  1.x
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>指南</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/ui-docs/component/guide.html" class="sidebar-link">开发指南</a></li><li><a href="/ui-docs/component/transition.html" class="sidebar-link">内置过渡动画</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>组件</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="https://sidebar-title" target="_blank" rel="noopener noreferrer" class="sidebar-link">A<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="/ui-docs/component/alert/" class="sidebar-link">Alert 警告</a></li><li><a href="/ui-docs/component/audio/" class="sidebar-link">Audio 音频</a></li><li><a href="https://sidebar-title" target="_blank" rel="noopener noreferrer" class="sidebar-link">B<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="/ui-docs/component/background/" class="sidebar-link">Background 内容区背景</a></li><li><a href="/ui-docs/component/badge/" class="sidebar-link">Badge 标记</a></li><li><a href="/ui-docs/component/breadcrumb/" class="sidebar-link">Breadcrumb 面包屑</a></li><li><a href="/ui-docs/component/button/" class="sidebar-link">Button 按钮</a></li><li><a href="https://sidebar-title" target="_blank" rel="noopener noreferrer" class="sidebar-link">C<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="/ui-docs/component/card/" class="sidebar-link">Card 单人像卡片</a></li><li><a href="/ui-docs/component/card-frame/" class="sidebar-link">CardFrame 卡片框架</a></li><li><a href="/ui-docs/component/cascader/" class="sidebar-link">Cascader 级联选择器</a></li><li><a href="/ui-docs/component/checkbox/" class="sidebar-link">Checkbox 多选框</a></li><li><a href="/ui-docs/component/click-outside/" class="sidebar-link">ClickOutside 指令</a></li><li><a href="/ui-docs/component/clipboard/" class="sidebar-link">Clipboard  剪贴板</a></li><li><a href="/ui-docs/component/collapse/" class="sidebar-link">Collapse 折叠面板</a></li><li><a href="/ui-docs/component/color-picker/" class="sidebar-link">ColorPicker 颜色选择器</a></li><li><a href="/ui-docs/component/container/" class="sidebar-link">Container 布局容器</a></li><li><a href="/ui-docs/component/contextmenu/" class="sidebar-link">ContextMenu 右键菜单</a></li><li><a href="https://sidebar-title" target="_blank" rel="noopener noreferrer" class="sidebar-link">D<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="/ui-docs/component/date-picker/" class="sidebar-link">DatePicker 日期选择器</a></li><li><a href="/ui-docs/component/datetime-picker/" class="sidebar-link">DateTimePicker 日期时间选择器</a></li><li><a href="/ui-docs/component/time-picker/" class="sidebar-link">TimePicker 时间选择器</a></li><li><a href="/ui-docs/component/dialog/" class="active sidebar-link">Dialog 对话框</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/ui-docs/component/double-card/" class="sidebar-link">DoubleCard 双人像卡片</a></li><li><a href="/ui-docs/component/dropdown/" class="sidebar-link">Dropdown 下拉菜单</a></li><li><a href="https://sidebar-title" target="_blank" rel="noopener noreferrer" class="sidebar-link">F<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="/ui-docs/component/form/" class="sidebar-link">Form 表单</a></li><li><a href="https://sidebar-title" target="_blank" rel="noopener noreferrer" class="sidebar-link">I<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="/ui-docs/component/icon/" class="sidebar-link">Icon 图标集</a></li><li><a href="/ui-docs/component/img-container/" class="sidebar-link">ImgContainer 图片容器组件</a></li><li><a href="/ui-docs/component/img-select/" class="sidebar-link">ImgSelect 图片选择组件</a></li><li><a href="/ui-docs/component/input/" class="sidebar-link">Input 输入框</a></li><li><a href="/ui-docs/component/input-number/" class="sidebar-link">InputNumber 计数器</a></li><li><a href="https://sidebar-title" target="_blank" rel="noopener noreferrer" class="sidebar-link">L<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="/ui-docs/component/layout/" class="sidebar-link">Layout 布局</a></li><li><a href="/ui-docs/component/loading/" class="sidebar-link">Loading 加载</a></li><li><a href="https://sidebar-title" target="_blank" rel="noopener noreferrer" class="sidebar-link">M<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="/ui-docs/component/menu/" class="sidebar-link">NavMenu 导航菜单</a></li><li><a href="/ui-docs/component/message/" class="sidebar-link">Message 消息提示</a></li><li><a href="/ui-docs/component/message-box/" class="sidebar-link">MessageBox 弹框</a></li><li><a href="https://sidebar-title" target="_blank" rel="noopener noreferrer" class="sidebar-link">N<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="/ui-docs/component/notification/" class="sidebar-link">Notification 通知</a></li><li><a href="https://sidebar-title" target="_blank" rel="noopener noreferrer" class="sidebar-link">P<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="/ui-docs/component/pagination/" class="sidebar-link">Pagination 分页</a></li><li><a href="/ui-docs/component/popconfirm/" class="sidebar-link">Popconfirm 气泡确认框</a></li><li><a href="/ui-docs/component/popover/" class="sidebar-link">Popover 弹出框</a></li><li><a href="/ui-docs/component/progress/" class="sidebar-link">Progress 进度条</a></li><li><a href="https://sidebar-title" target="_blank" rel="noopener noreferrer" class="sidebar-link">R<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="/ui-docs/component/radio/" class="sidebar-link">Radio 单选框</a></li><li><a href="https://sidebar-title" target="_blank" rel="noopener noreferrer" class="sidebar-link">S<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="/ui-docs/component/score/" class="sidebar-link">Score 比分</a></li><li><a href="/ui-docs/component/select/" class="sidebar-link">Select 选择器</a></li><li><a href="/ui-docs/component/slider/" class="sidebar-link">Slider 滑块</a></li><li><a href="/ui-docs/component/steps/" class="sidebar-link">Steps 步骤条</a></li><li><a href="/ui-docs/component/swiper/" class="sidebar-link">Swiper 轮播</a></li><li><a href="/ui-docs/component/switch/" class="sidebar-link">Switch 开关</a></li><li><a href="https://sidebar-title" target="_blank" rel="noopener noreferrer" class="sidebar-link">T<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="/ui-docs/component/table/" class="sidebar-link">Table 表格</a></li><li><a href="/ui-docs/component/tabs/" class="sidebar-link">Tabs 标签页</a></li><li><a href="/ui-docs/component/tag/" class="sidebar-link">Tag 标签</a></li><li><a href="/ui-docs/component/tooltip/" class="sidebar-link">Tooltip 文字提示</a></li><li><a href="/ui-docs/component/tree/" class="sidebar-link">Tree 树</a></li><li><a href="/ui-docs/component/treeselect/" class="sidebar-link">TreeSelect 树选择器</a></li><li><a href="https://sidebar-title" target="_blank" rel="noopener noreferrer" class="sidebar-link">U<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li><a href="/ui-docs/component/upload/" class="sidebar-link">Upload 上传</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="dialog-对话框"><a href="#dialog-对话框" class="header-anchor">#</a> Dialog 对话框</h1> <p>在保留当前页面状态的情况下，告知用户并承载相关操作。</p> <h3 id="基本用法"><a href="#基本用法" class="header-anchor">#</a> 基本用法</h3> <p>Dialog 弹出一个对话框，适合需要定制性更大的场景。</p> <blockquote><p>需要设置<code>visible</code>属性，它接收<code>Boolean</code>，当为<code>true</code>时显示 Dialog。Dialog 分为两个部分：<code>body</code>和<code>footer</code>，<code>footer</code>需要具名为<code>footer</code>的<code>slot</code>。<code>title</code>属性用于定义标题，它是可选的，默认值为空。最后，本例还展示了<code>before-close</code>的用法。</p></blockquote> <section class="demo-and-code-wrapper"><div class="demo-wrapper"><div><button type="button" class="meg-button meg-button--default"><!----> <!----> <span>
+    点击打开 Dialog
+  </span></button> <div class="meg-dialog__wrapper is-middle" style="display:none;"><div role="dialog" aria-modal="true" aria-label="提示" class="meg-dialog" style="width:30%;"><div class="meg-dialog__header"><div class="meg-dialog__title">
+            提示
+          </div></div> <button type="button" aria-label="Close" class="meg-dialog__header-btn"><svg data-svg-icon="close_1" version="1.1" viewBox="0 0 32 32" class="meg-dialog__close meg-icon-close meg-icon meg-fill"><path pid="0" _fill="#435068" d="M29.822 4.667l-2.489-2.489L16 13.467 4.667 2.178 2.178 4.667 13.467 16 2.178 27.333l2.489 2.489L16 18.533l11.333 11.289 2.489-2.489L18.533 16z"/></svg></button> <!----> <div class="meg-dialog__footer"><span class="dialog-footer"><button type="button" class="meg-button meg-button--default"><!----> <!----> <span>取 消</span></button> <button type="button" class="meg-button meg-button--primary"><!----> <!----> <span>确 定</span></button></span></div></div></div></div></div> <div class="code-wrapper" style="max-height:0px;"><div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-button</span>
+      <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialogVisible = true<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      点击打开 Dialog
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-button</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-dialog</span>
+      <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>提示<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">:visible.sync</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialogVisible<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>30%<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">:before-close</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>handleClose<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span>
+        <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>footer<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialog-footer<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialogVisible = false<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>取 消<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-button</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-button</span>
+          <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>primary<span class="token punctuation">&quot;</span></span>
+          <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialogVisible = false<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>确 定<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-button</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-dialog</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      dialogVisible<span class="token punctuation">:</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">handleClose</span><span class="token punctuation">(</span><span class="token parameter">done</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$confirm</span><span class="token punctuation">(</span><span class="token string">'确认关闭？'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div> <div class="code-control" style="position:;"><span class="control-btn" style="display:;"><span class="control-text">show code</span> <span class="arrow-icon-wrap"><i class="arrow-icon" style="transform:rotate(90deg);"><svg version="1.1" viewBox="0 0 72 72" style="width: 10px; height: 10px;"><defs></defs><path d="M57.9,41.4L24.9,70.2c-3,2.6-7.5,2.3-10.2-0.7c-1.1-1.3-1.8-3-1.8-4.7V7.2c0-4,3.2-7.2,7.2-7.2c1.7,0,3.4,0.6,4.7,1.8l32.9,28.8c3,2.6,3.3,7.2,0.7,10.2C58.3,41,58.1,41.2,57.9,41.4z"></path></svg></i></span></span> <div class="online-wrapper"><form target="_blank" action="https://codepen.io/pen/define" method="post" class="demo-and-code-online-edit-wrapper"><input type="hidden" name="data" value="{&quot;js&quot;:&quot;new Vue({\n\tel: '#app', \n\tdata() {\n    return {\n      dialogVisible: false\n    };\n  },\n  methods: {\n    handleClose(done) {\n      this.$confirm('确认关闭？')\n        .then(() =&gt; {\n          done();\n        })\n        .catch(() =&gt; {});\n    }\n  }\n};\n})&quot;,&quot;css&quot;:&quot;&quot;,&quot;html&quot;:&quot;&lt;div id=\&quot;app\&quot;&gt;\n\n&lt;div&gt;\n    &lt;meg-button\n      @click=\&quot;dialogVisible = true\&quot;&gt;\n      点击打开 Dialog\n    &lt;/meg-button&gt;\n    &lt;meg-dialog\n      title=\&quot;提示\&quot;\n      :visible.sync=\&quot;dialogVisible\&quot;\n      width=\&quot;30%\&quot;\n      :before-close=\&quot;handleClose\&quot;&gt;\n      &lt;span&gt;这是一段信息&lt;/span&gt;\n      &lt;span\n        slot=\&quot;footer\&quot;\n        class=\&quot;dialog-footer\&quot;&gt;\n        &lt;meg-button @click=\&quot;dialogVisible = false\&quot;&gt;取 消&lt;/meg-button&gt;\n        &lt;meg-button\n          type=\&quot;primary\&quot;\n          @click=\&quot;dialogVisible = false\&quot;&gt;确 定&lt;/meg-button&gt;\n      &lt;/span&gt;\n    &lt;/meg-dialog&gt;\n  &lt;/div&gt;\n\n&lt;/div&gt;&quot;,&quot;layout&quot;:&quot;left&quot;,&quot;editors&quot;:&quot;101&quot;,&quot;js_external&quot;:&quot;https://unpkg.com/vue/dist/vue.js&quot;,&quot;css_external&quot;:&quot;&quot;,&quot;js_pre_processor&quot;:&quot;babel&quot;}"> <!----> <!----> <button type="submit" data-tip="Codepen"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" xml:space="preserve"><g><path d="M250.001,0C111.927,0,0,111.927,0,250.001C0,388.077,111.927,500,250.001,500C388.073,500,500,388.077,500,250.001
+        C500,111.927,388.073,0,250.001,0z M250.001,458.943c-115.212,0-208.941-93.733-208.941-208.942
+        c0-115.208,93.729-208.941,208.941-208.941c115.208,0,208.938,93.733,208.938,208.941
+        C458.939,365.21,365.21,458.943,250.001,458.943z"></path> <path d="M404.462,201.172c-0.028-0.195-0.076-0.382-0.109-0.577c-0.065-0.374-0.135-0.748-0.232-1.114
+        c-0.057-0.22-0.138-0.431-0.206-0.642c-0.106-0.326-0.212-0.651-0.342-0.968c-0.091-0.22-0.196-0.439-0.297-0.651
+        c-0.14-0.3-0.285-0.593-0.452-0.877c-0.122-0.212-0.251-0.416-0.377-0.618c-0.18-0.277-0.362-0.546-0.562-0.806
+        c-0.146-0.194-0.3-0.39-0.454-0.577c-0.212-0.243-0.432-0.487-0.664-0.716c-0.174-0.178-0.346-0.357-0.528-0.521
+        c-0.244-0.219-0.496-0.431-0.752-0.633c-0.198-0.155-0.395-0.31-0.602-0.456c-0.078-0.049-0.146-0.114-0.22-0.163L257.369,97.656
+        c-4.464-2.976-10.274-2.976-14.738,0l-141.295,94.196c-0.073,0.049-0.142,0.114-0.219,0.163c-0.208,0.146-0.403,0.301-0.598,0.456
+        c-0.26,0.203-0.512,0.415-0.752,0.633c-0.187,0.164-0.357,0.342-0.533,0.521c-0.231,0.229-0.451,0.473-0.658,0.716
+        c-0.159,0.188-0.313,0.383-0.459,0.577c-0.195,0.26-0.383,0.529-0.557,0.806c-0.134,0.203-0.26,0.406-0.382,0.618
+        c-0.163,0.284-0.309,0.577-0.451,0.877c-0.102,0.211-0.208,0.431-0.297,0.651c-0.13,0.317-0.236,0.642-0.341,0.968
+        c-0.07,0.211-0.146,0.422-0.208,0.642c-0.097,0.366-0.162,0.74-0.231,1.114c-0.032,0.195-0.081,0.382-0.106,0.577
+        c-0.077,0.569-0.122,1.146-0.122,1.732v94.197c0,0.585,0.044,1.162,0.122,1.74c0.025,0.188,0.074,0.382,0.106,0.568
+        c0.069,0.374,0.134,0.748,0.231,1.114c0.062,0.22,0.138,0.432,0.208,0.643c0.105,0.324,0.211,0.65,0.341,0.975
+        c0.089,0.222,0.195,0.433,0.297,0.645c0.143,0.3,0.289,0.592,0.451,0.885c0.122,0.204,0.248,0.406,0.382,0.61
+        c0.174,0.276,0.362,0.545,0.557,0.806c0.146,0.203,0.301,0.391,0.459,0.577c0.208,0.243,0.427,0.488,0.658,0.716
+        c0.175,0.178,0.346,0.357,0.533,0.52c0.24,0.221,0.492,0.432,0.752,0.635c0.195,0.155,0.391,0.31,0.598,0.454
+        c0.077,0.05,0.146,0.115,0.219,0.163l141.295,94.197c2.231,1.487,4.802,2.236,7.371,2.236c2.566,0,5.135-0.749,7.368-2.236
+        l141.295-94.197c0.074-0.048,0.142-0.113,0.22-0.163c0.207-0.145,0.403-0.299,0.602-0.454c0.256-0.203,0.508-0.414,0.752-0.635
+        c0.183-0.162,0.354-0.342,0.528-0.52c0.232-0.228,0.452-0.473,0.664-0.716c0.154-0.187,0.308-0.374,0.454-0.577
+        c0.2-0.261,0.383-0.529,0.562-0.806c0.126-0.204,0.255-0.406,0.377-0.61c0.167-0.293,0.312-0.585,0.452-0.885
+        c0.101-0.212,0.206-0.423,0.297-0.645c0.13-0.324,0.235-0.65,0.342-0.975c0.068-0.211,0.149-0.423,0.206-0.643
+        c0.098-0.366,0.167-0.74,0.232-1.114c0.033-0.187,0.081-0.381,0.109-0.568c0.073-0.578,0.119-1.155,0.119-1.74v-94.197
+        C404.581,202.318,404.535,201.741,404.462,201.172z M263.286,133.533l104.088,69.387l-46.493,31.103l-57.595-38.527V133.533z
+         M236.715,133.533v61.963l-57.592,38.527l-46.497-31.103L236.715,133.533z M121.99,227.771l33.238,22.231l-33.238,22.233V227.771z
+         M236.715,366.471l-104.088-69.388l46.497-31.094l57.592,38.52V366.471z M250.001,281.431l-46.988-31.429l46.988-31.428
+        l46.985,31.428L250.001,281.431z M263.286,366.471v-61.962l57.595-38.52l46.493,31.094L263.286,366.471z M378.01,272.234
+        l-33.233-22.233l33.233-22.231V272.234z"></path></g></svg></button></form><form target="_blank" action="https://jsfiddle.net/api/post/library/pure" method="post" class="demo-and-code-online-edit-wrapper"><!----> <input type="hidden" name="js" value="export default {
+  data() {
+    return {
+      dialogVisible: false
+    };
+  },
+  methods: {
+    handleClose(done) {
+      this.$confirm('确认关闭？')
+        .then(() =&gt; {
+          done();
+        })
+        .catch(() =&gt; {});
+    }
+  }
+};"> <input type="hidden" name="css" value=""> <input type="hidden" name="html" value="&lt;div&gt;
+    &lt;meg-button
+      @click=&quot;dialogVisible = true&quot;&gt;
+      点击打开 Dialog
+    &lt;/meg-button&gt;
+    &lt;meg-dialog
+      title=&quot;提示&quot;
+      :visible.sync=&quot;dialogVisible&quot;
+      width=&quot;30%&quot;
+      :before-close=&quot;handleClose&quot;&gt;
+      &lt;span&gt;这是一段信息&lt;/span&gt;
+      &lt;span
+        slot=&quot;footer&quot;
+        class=&quot;dialog-footer&quot;&gt;
+        &lt;meg-button @click=&quot;dialogVisible = false&quot;&gt;取 消&lt;/meg-button&gt;
+        &lt;meg-button
+          type=&quot;primary&quot;
+          @click=&quot;dialogVisible = false&quot;&gt;确 定&lt;/meg-button&gt;
+      &lt;/span&gt;
+    &lt;/meg-dialog&gt;
+  &lt;/div&gt;"> <input type="hidden" name="panel_js" value="3"> <input type="hidden" name="resources" value="https://unpkg.com/vue/dist/vue.js"> <!----> <button type="submit" data-tip="JSFiddle"><svg t="1547088289967" viewBox="0 0 1170 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1952" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon"><path d="M1028.571429 441.142857q63.428571 26.285714 102.571428 83.142857T1170.285714 650.857143q0 93.714286-67.428571 160.285714T940 877.714286q-2.285714 0-6.571429-0.285715t-6-0.285714H232q-97.142857-5.714286-164.571429-71.714286T0 645.142857q0-62.857143 31.428571-116t84-84q-6.857143-22.285714-6.857142-46.857143 0-65.714286 46.857142-112t113.714286-46.285714q54.285714 0 98.285714 33.142857 42.857143-88 127.142858-141.714286t186.571428-53.714285q94.857143 0 174.857143 46T982.571429 248.571429t46.571428 172q0 3.428571-0.285714 10.285714t-0.285714 10.285714zM267.428571 593.142857q0 69.714286 48 110.285714t118.857143 40.571429q78.285714 0 137.142857-56.571429-9.142857-11.428571-27.142857-32.285714T519.428571 626.285714q-38.285714 37.142857-82.285714 37.142857-31.428571 0-53.428571-19.142857T361.714286 594.285714q0-30.285714 22-49.714285t52.285714-19.428572q25.142857 0 48.285714 12t41.714286 31.428572 37.142857 42.857142 39.428572 46.857143 44 42.857143 55.428571 31.428572 69.428571 12q69.142857 0 116.857143-40.857143T936 594.857143q0-69.142857-48-109.714286t-118.285714-40.571428q-81.714286 0-137.714286 55.428571l53.142857 61.714286q37.714286-36.571429 81.142857-36.571429 29.714286 0 52.571429 18.857143t22.857143 48q0 32.571429-21.142857 52.285714t-53.714286 19.714286q-24.571429 0-47.142857-12t-41.142857-31.428571-37.428572-42.857143-39.714286-46.857143-44.285714-42.857143-55.142857-31.428571T434.285714 444.571429q-69.714286 0-118.285714 40.285714T267.428571 593.142857z" p-id="1953"></path></svg></button></form><form target="_blank" action="https://codesandbox.io/api/v1/sandboxes/define" method="post" class="demo-and-code-online-edit-wrapper"><!----> <!----> <input type="hidden" name="parameters" value="N4IgZglgNgpgziAXKAtgQwgOwHQCsHIgDGA9pgC4wVIgA6mEKADiQE7kAEAagK4wdhWJFBwDkANz6j6jFuw4BBJkwFCRo7AHolTbJJjTM9TDADu3PgApg9DnY4woiMQGI0y0QBpb9ysyholM6iADw6mgB8Xj52pMxkVORwzsCKyhwAvt6YGQCUIFkgOnp8SKCkFIk0IX5MAZQR9PQhACYQ4o2Y9hwhKDAA5gC0AEY85ORkMfYAAkRQEEQA1gC8tCBtaFAk_VwQcBDDsBzLHOSsfGud3XaAnQ6A34qAykaAAPocACIQm9tTIZp9Q6PjMhXey9AaDDZbfpTOzkCDkWCrECABeNAFyea2hHEQ4j2B1g2DgAE9MERERDtrt9ocYOiutdTBAWuQABaIgDMAAYAKQ066Y4YwMBsGCDOYkOAwRFMtCYFqwADCW3FlwxITgTGlEUAm_GAejNAABygFbrQCH8oB7Ax-ao1KvNRlpvLgW3IiMFJEorB5vI4czQcDgpI-kMGTpdypt11B_zGEy6s3mS19nx2OKpxwEmyVIAigDXlDiACNsfn8RhGgRi7GGC4Dre7fASmBK1kxWIw0KwCW7K9GFis1mSE5SjicwKnqenAHYeHEAWdp5sEAyPA7pm9WYWc9X5g7vAn5tDpNTA_Wr1GCdZpwIgNpjkTowAAeck4LQFaB4UE4NlpLUCaEsuQ4L-6rBg5B4Vguh_a5uwpXEYGcAcoCVEMMgAbh8LIfD6ZkSBaZJvymKUZXlRUYEsFoEi_EDumZPZsAAEgqSBWBQSxRGHQAS6MAZ0VAFvUwB8f9EXJiw4bBmSoSxP2OCIsJDXkiJMT9EPE-w8l47AiECIgmSEr9llE4A8hk7oMiQ-gEOaTRj1Pc9t1VcgCVgQ8d2MyzrPoApPBALA70vbAmXIFAoDKYgyEoahEDoHdNw4BlEXcJhLg3doIickB1SWNB-hgPA4DIXyKgC8hfLvGsZSoIgIHgXz9Bofc4ByjJquqoA"> <input type="hidden" name="query" value="module=App.vue"> <!----> <!----> <button type="submit" data-tip="CodeSandbox"><svg t="1547088313123" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2783" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon"><path d="M737.828571 166.857143l0.457143-0.228572h0.228572L512 36.571429 285.6 166.628571h-0.228571l0.8 0.342858L100 274.285714v475.428572L512 987.428571l412-237.714285V274.285714l-186.171429-107.428571zM478.514286 890.971429L314.971429 796.571429V637.028571L166.857143 552.914286V353.028571l311.657143 179.771429v358.171429zM199.085714 294.285714l153.942857-88.914285 158.742858 91.085714 158.971428-91.314286 154.514286 89.142857-313.028572 180.571429-313.142857-180.571429zM857.142857 553.485714l-147.2 83.542857v158.971429l-164.457143 94.857143V533.028571L857.142857 353.257143v200.228571z" p-id="2784"></path></svg></button></form></div></div></section> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p><code>before-close</code> 仅当用户通过点击关闭图标或遮罩关闭 Dialog 时起效。如果你在 <code>footer</code> 具名 slot 里添加了用于关闭 Dialog 的按钮，那么可以在按钮的点击回调函数里加入 <code>before-close</code> 的相关逻辑。</p></div> <h3 id="自定义内容"><a href="#自定义内容" class="header-anchor">#</a> 自定义内容</h3> <p>Dialog 组件的内容可以是任意的，甚至可以是表格或表单，下面是应用了 Element Table 和 Form 组件的两个样例。</p> <section class="demo-and-code-wrapper"><div class="demo-wrapper"><div><button type="button" class="meg-button meg-button--default"><!----> <!----> <span>
+    打开嵌套表格的 Dialog
+  </span></button> <div class="meg-dialog__wrapper is-middle" style="display:none;"><div role="dialog" aria-modal="true" aria-label="收货地址" class="meg-dialog"><div class="meg-dialog__header"><div class="meg-dialog__title">
+            收货地址
+          </div></div> <button type="button" aria-label="Close" class="meg-dialog__header-btn"><svg data-svg-icon="close_1" version="1.1" viewBox="0 0 32 32" class="meg-dialog__close meg-icon-close meg-icon meg-fill"><path pid="0" _fill="#435068" d="M29.822 4.667l-2.489-2.489L16 13.467 4.667 2.178 2.178 4.667 13.467 16 2.178 27.333l2.489 2.489L16 18.533l11.333 11.289 2.489-2.489L18.533 16z"/></svg></button> <!----> <!----></div></div> <button type="button" class="meg-button meg-button--default"><!----> <!----> <span>
+    打开嵌套表单的 Dialog
+  </span></button> <div class="meg-dialog__wrapper is-middle" style="display:none;"><div role="dialog" aria-modal="true" aria-label="收货地址" class="meg-dialog"><div class="meg-dialog__header"><div class="meg-dialog__title">
+            收货地址
+          </div></div> <button type="button" aria-label="Close" class="meg-dialog__header-btn"><svg data-svg-icon="close_1" version="1.1" viewBox="0 0 32 32" class="meg-dialog__close meg-icon-close meg-icon meg-fill"><path pid="0" _fill="#435068" d="M29.822 4.667l-2.489-2.489L16 13.467 4.667 2.178 2.178 4.667 13.467 16 2.178 27.333l2.489 2.489L16 18.533l11.333 11.289 2.489-2.489L18.533 16z"/></svg></button> <!----> <div class="meg-dialog__footer"><div class="dialog-footer"><button type="button" class="meg-button meg-button--default"><!----> <!----> <span>
+        取 消
+      </span></button> <button type="button" class="meg-button meg-button--primary"><!----> <!----> <span>
+        确 定
+      </span></button></div></div></div></div></div></div> <div class="code-wrapper" style="max-height:0px;"><div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- Table --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-button</span>
+      <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialogTableVisible = true<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      打开嵌套表格的 Dialog
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-button</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-dialog</span>
+      <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>收货地址<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">:visible.sync</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialogTableVisible<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-table</span> <span class="token attr-name">:data</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>gridData<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-table-column</span>
+          <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>date<span class="token punctuation">&quot;</span></span>
+          <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>日期<span class="token punctuation">&quot;</span></span>
+          <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>150<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-table-column</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-table-column</span>
+          <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>name<span class="token punctuation">&quot;</span></span>
+          <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>姓名<span class="token punctuation">&quot;</span></span>
+          <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>200<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-table-column</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-table-column</span>
+          <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>address<span class="token punctuation">&quot;</span></span>
+          <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>地址<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-table-column</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-table</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-dialog</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment">&lt;!-- Form --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-button</span>
+      <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialogFormVisible = true<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      打开嵌套表单的 Dialog
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-button</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-dialog</span>
+      <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>收货地址<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">:visible.sync</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialogFormVisible<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-form</span> <span class="token attr-name">:model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>form<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-form-item</span>
+          <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>活动名称<span class="token punctuation">&quot;</span></span>
+          <span class="token attr-name">:label-width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>formLabelWidth<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-input</span>
+            <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>form.name<span class="token punctuation">&quot;</span></span>
+            <span class="token attr-name">autocomplete</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>off<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-input</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-form-item</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-form-item</span>
+          <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>活动区域<span class="token punctuation">&quot;</span></span>
+          <span class="token attr-name">:label-width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>formLabelWidth<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-select</span>
+            <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>form.region<span class="token punctuation">&quot;</span></span>
+            <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>请选择活动区域<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-option</span>
+              <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>区域一<span class="token punctuation">&quot;</span></span>
+              <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>shanghai<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-option</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-option</span>
+              <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>区域二<span class="token punctuation">&quot;</span></span>
+              <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>beijing<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-option</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-select</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-form-item</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-form</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span>
+        <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>footer<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialog-footer<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialogFormVisible = false<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+          取 消
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-button</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-button</span>
+          <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>primary<span class="token punctuation">&quot;</span></span>
+          <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialogFormVisible = false<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+          确 定
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-button</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-dialog</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      gridData<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+        date<span class="token punctuation">:</span> <span class="token string">'2016-05-02'</span><span class="token punctuation">,</span>
+        name<span class="token punctuation">:</span> <span class="token string">'王小虎'</span><span class="token punctuation">,</span>
+        address<span class="token punctuation">:</span> <span class="token string">'上海市普陀区金沙江路 1518 弄'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        date<span class="token punctuation">:</span> <span class="token string">'2016-05-04'</span><span class="token punctuation">,</span>
+        name<span class="token punctuation">:</span> <span class="token string">'王小虎'</span><span class="token punctuation">,</span>
+        address<span class="token punctuation">:</span> <span class="token string">'上海市普陀区金沙江路 1518 弄'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        date<span class="token punctuation">:</span> <span class="token string">'2016-05-01'</span><span class="token punctuation">,</span>
+        name<span class="token punctuation">:</span> <span class="token string">'王小虎'</span><span class="token punctuation">,</span>
+        address<span class="token punctuation">:</span> <span class="token string">'上海市普陀区金沙江路 1518 弄'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        date<span class="token punctuation">:</span> <span class="token string">'2016-05-03'</span><span class="token punctuation">,</span>
+        name<span class="token punctuation">:</span> <span class="token string">'王小虎'</span><span class="token punctuation">,</span>
+        address<span class="token punctuation">:</span> <span class="token string">'上海市普陀区金沙江路 1518 弄'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      dialogTableVisible<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      dialogFormVisible<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      form<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        name<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        region<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        date1<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        date2<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        delivery<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        type<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        resource<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+        desc<span class="token punctuation">:</span> <span class="token string">''</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      formLabelWidth<span class="token punctuation">:</span> <span class="token string">'120px'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div> <div class="code-control" style="position:;"><span class="control-btn" style="display:;"><span class="control-text">show code</span> <span class="arrow-icon-wrap"><i class="arrow-icon" style="transform:rotate(90deg);"><svg version="1.1" viewBox="0 0 72 72" style="width: 10px; height: 10px;"><defs></defs><path d="M57.9,41.4L24.9,70.2c-3,2.6-7.5,2.3-10.2-0.7c-1.1-1.3-1.8-3-1.8-4.7V7.2c0-4,3.2-7.2,7.2-7.2c1.7,0,3.4,0.6,4.7,1.8l32.9,28.8c3,2.6,3.3,7.2,0.7,10.2C58.3,41,58.1,41.2,57.9,41.4z"></path></svg></i></span></span> <div class="online-wrapper"><form target="_blank" action="https://codepen.io/pen/define" method="post" class="demo-and-code-online-edit-wrapper"><input type="hidden" name="data" value="{&quot;js&quot;:&quot;new Vue({\n\tel: '#app', \n\tdata() {\n    return {\n      gridData: [{\n        date: '2016-05-02',\n        name: '王小虎',\n        address: '上海市普陀区金沙江路 1518 弄'\n      }, {\n        date: '2016-05-04',\n        name: '王小虎',\n        address: '上海市普陀区金沙江路 1518 弄'\n      }, {\n        date: '2016-05-01',\n        name: '王小虎',\n        address: '上海市普陀区金沙江路 1518 弄'\n      }, {\n        date: '2016-05-03',\n        name: '王小虎',\n        address: '上海市普陀区金沙江路 1518 弄'\n      }],\n      dialogTableVisible: false,\n      dialogFormVisible: false,\n      form: {\n        name: '',\n        region: '',\n        date1: '',\n        date2: '',\n        delivery: false,\n        type: [],\n        resource: '',\n        desc: ''\n      },\n      formLabelWidth: '120px'\n    };\n  }\n};\n})&quot;,&quot;css&quot;:&quot;&quot;,&quot;html&quot;:&quot;&lt;div id=\&quot;app\&quot;&gt;\n\n&lt;div&gt;\n    &lt;!-- Table --&gt;\n    &lt;meg-button\n      @click=\&quot;dialogTableVisible = true\&quot;&gt;\n      打开嵌套表格的 Dialog\n    &lt;/meg-button&gt;\n\n    &lt;meg-dialog\n      title=\&quot;收货地址\&quot;\n      :visible.sync=\&quot;dialogTableVisible\&quot;&gt;\n      &lt;meg-table :data=\&quot;gridData\&quot;&gt;\n        &lt;meg-table-column\n          property=\&quot;date\&quot;\n          label=\&quot;日期\&quot;\n          width=\&quot;150\&quot;&gt;&lt;/meg-table-column&gt;\n        &lt;meg-table-column\n          property=\&quot;name\&quot;\n          label=\&quot;姓名\&quot;\n          width=\&quot;200\&quot;&gt;&lt;/meg-table-column&gt;\n        &lt;meg-table-column\n          property=\&quot;address\&quot;\n          label=\&quot;地址\&quot;&gt;&lt;/meg-table-column&gt;\n      &lt;/meg-table&gt;\n    &lt;/meg-dialog&gt;\n\n    &lt;!-- Form --&gt;\n    &lt;meg-button\n      @click=\&quot;dialogFormVisible = true\&quot;&gt;\n      打开嵌套表单的 Dialog\n    &lt;/meg-button&gt;\n\n    &lt;meg-dialog\n      title=\&quot;收货地址\&quot;\n      :visible.sync=\&quot;dialogFormVisible\&quot;&gt;\n      &lt;meg-form :model=\&quot;form\&quot;&gt;\n        &lt;meg-form-item\n          label=\&quot;活动名称\&quot;\n          :label-width=\&quot;formLabelWidth\&quot;&gt;\n          &lt;meg-input\n            v-model=\&quot;form.name\&quot;\n            autocomplete=\&quot;off\&quot;&gt;&lt;/meg-input&gt;\n        &lt;/meg-form-item&gt;\n        &lt;meg-form-item\n          label=\&quot;活动区域\&quot;\n          :label-width=\&quot;formLabelWidth\&quot;&gt;\n          &lt;meg-select\n            v-model=\&quot;form.region\&quot;\n            placeholder=\&quot;请选择活动区域\&quot;&gt;\n            &lt;meg-option\n              label=\&quot;区域一\&quot;\n              value=\&quot;shanghai\&quot;&gt;&lt;/meg-option&gt;\n            &lt;meg-option\n              label=\&quot;区域二\&quot;\n              value=\&quot;beijing\&quot;&gt;&lt;/meg-option&gt;\n          &lt;/meg-select&gt;\n        &lt;/meg-form-item&gt;\n      &lt;/meg-form&gt;\n      &lt;div\n        slot=\&quot;footer\&quot;\n        class=\&quot;dialog-footer\&quot;&gt;\n        &lt;meg-button @click=\&quot;dialogFormVisible = false\&quot;&gt;\n          取 消\n        &lt;/meg-button&gt;\n        &lt;meg-button\n          type=\&quot;primary\&quot;\n          @click=\&quot;dialogFormVisible = false\&quot;&gt;\n          确 定\n        &lt;/meg-button&gt;\n      &lt;/div&gt;\n    &lt;/meg-dialog&gt;\n  &lt;/div&gt;\n\n&lt;/div&gt;&quot;,&quot;layout&quot;:&quot;left&quot;,&quot;editors&quot;:&quot;101&quot;,&quot;js_external&quot;:&quot;https://unpkg.com/vue/dist/vue.js&quot;,&quot;css_external&quot;:&quot;&quot;,&quot;js_pre_processor&quot;:&quot;babel&quot;}"> <!----> <!----> <button type="submit" data-tip="Codepen"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" xml:space="preserve"><g><path d="M250.001,0C111.927,0,0,111.927,0,250.001C0,388.077,111.927,500,250.001,500C388.073,500,500,388.077,500,250.001
+        C500,111.927,388.073,0,250.001,0z M250.001,458.943c-115.212,0-208.941-93.733-208.941-208.942
+        c0-115.208,93.729-208.941,208.941-208.941c115.208,0,208.938,93.733,208.938,208.941
+        C458.939,365.21,365.21,458.943,250.001,458.943z"></path> <path d="M404.462,201.172c-0.028-0.195-0.076-0.382-0.109-0.577c-0.065-0.374-0.135-0.748-0.232-1.114
+        c-0.057-0.22-0.138-0.431-0.206-0.642c-0.106-0.326-0.212-0.651-0.342-0.968c-0.091-0.22-0.196-0.439-0.297-0.651
+        c-0.14-0.3-0.285-0.593-0.452-0.877c-0.122-0.212-0.251-0.416-0.377-0.618c-0.18-0.277-0.362-0.546-0.562-0.806
+        c-0.146-0.194-0.3-0.39-0.454-0.577c-0.212-0.243-0.432-0.487-0.664-0.716c-0.174-0.178-0.346-0.357-0.528-0.521
+        c-0.244-0.219-0.496-0.431-0.752-0.633c-0.198-0.155-0.395-0.31-0.602-0.456c-0.078-0.049-0.146-0.114-0.22-0.163L257.369,97.656
+        c-4.464-2.976-10.274-2.976-14.738,0l-141.295,94.196c-0.073,0.049-0.142,0.114-0.219,0.163c-0.208,0.146-0.403,0.301-0.598,0.456
+        c-0.26,0.203-0.512,0.415-0.752,0.633c-0.187,0.164-0.357,0.342-0.533,0.521c-0.231,0.229-0.451,0.473-0.658,0.716
+        c-0.159,0.188-0.313,0.383-0.459,0.577c-0.195,0.26-0.383,0.529-0.557,0.806c-0.134,0.203-0.26,0.406-0.382,0.618
+        c-0.163,0.284-0.309,0.577-0.451,0.877c-0.102,0.211-0.208,0.431-0.297,0.651c-0.13,0.317-0.236,0.642-0.341,0.968
+        c-0.07,0.211-0.146,0.422-0.208,0.642c-0.097,0.366-0.162,0.74-0.231,1.114c-0.032,0.195-0.081,0.382-0.106,0.577
+        c-0.077,0.569-0.122,1.146-0.122,1.732v94.197c0,0.585,0.044,1.162,0.122,1.74c0.025,0.188,0.074,0.382,0.106,0.568
+        c0.069,0.374,0.134,0.748,0.231,1.114c0.062,0.22,0.138,0.432,0.208,0.643c0.105,0.324,0.211,0.65,0.341,0.975
+        c0.089,0.222,0.195,0.433,0.297,0.645c0.143,0.3,0.289,0.592,0.451,0.885c0.122,0.204,0.248,0.406,0.382,0.61
+        c0.174,0.276,0.362,0.545,0.557,0.806c0.146,0.203,0.301,0.391,0.459,0.577c0.208,0.243,0.427,0.488,0.658,0.716
+        c0.175,0.178,0.346,0.357,0.533,0.52c0.24,0.221,0.492,0.432,0.752,0.635c0.195,0.155,0.391,0.31,0.598,0.454
+        c0.077,0.05,0.146,0.115,0.219,0.163l141.295,94.197c2.231,1.487,4.802,2.236,7.371,2.236c2.566,0,5.135-0.749,7.368-2.236
+        l141.295-94.197c0.074-0.048,0.142-0.113,0.22-0.163c0.207-0.145,0.403-0.299,0.602-0.454c0.256-0.203,0.508-0.414,0.752-0.635
+        c0.183-0.162,0.354-0.342,0.528-0.52c0.232-0.228,0.452-0.473,0.664-0.716c0.154-0.187,0.308-0.374,0.454-0.577
+        c0.2-0.261,0.383-0.529,0.562-0.806c0.126-0.204,0.255-0.406,0.377-0.61c0.167-0.293,0.312-0.585,0.452-0.885
+        c0.101-0.212,0.206-0.423,0.297-0.645c0.13-0.324,0.235-0.65,0.342-0.975c0.068-0.211,0.149-0.423,0.206-0.643
+        c0.098-0.366,0.167-0.74,0.232-1.114c0.033-0.187,0.081-0.381,0.109-0.568c0.073-0.578,0.119-1.155,0.119-1.74v-94.197
+        C404.581,202.318,404.535,201.741,404.462,201.172z M263.286,133.533l104.088,69.387l-46.493,31.103l-57.595-38.527V133.533z
+         M236.715,133.533v61.963l-57.592,38.527l-46.497-31.103L236.715,133.533z M121.99,227.771l33.238,22.231l-33.238,22.233V227.771z
+         M236.715,366.471l-104.088-69.388l46.497-31.094l57.592,38.52V366.471z M250.001,281.431l-46.988-31.429l46.988-31.428
+        l46.985,31.428L250.001,281.431z M263.286,366.471v-61.962l57.595-38.52l46.493,31.094L263.286,366.471z M378.01,272.234
+        l-33.233-22.233l33.233-22.231V272.234z"></path></g></svg></button></form><form target="_blank" action="https://jsfiddle.net/api/post/library/pure" method="post" class="demo-and-code-online-edit-wrapper"><!----> <input type="hidden" name="js" value="export default {
+  data() {
+    return {
+      gridData: [{
+        date: '2016-05-02',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }, {
+        date: '2016-05-04',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }, {
+        date: '2016-05-01',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }, {
+        date: '2016-05-03',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }],
+      dialogTableVisible: false,
+      dialogFormVisible: false,
+      form: {
+        name: '',
+        region: '',
+        date1: '',
+        date2: '',
+        delivery: false,
+        type: [],
+        resource: '',
+        desc: ''
+      },
+      formLabelWidth: '120px'
+    };
+  }
+};"> <input type="hidden" name="css" value=""> <input type="hidden" name="html" value="&lt;div&gt;
+    &lt;!-- Table --&gt;
+    &lt;meg-button
+      @click=&quot;dialogTableVisible = true&quot;&gt;
+      打开嵌套表格的 Dialog
+    &lt;/meg-button&gt;
+
+    &lt;meg-dialog
+      title=&quot;收货地址&quot;
+      :visible.sync=&quot;dialogTableVisible&quot;&gt;
+      &lt;meg-table :data=&quot;gridData&quot;&gt;
+        &lt;meg-table-column
+          property=&quot;date&quot;
+          label=&quot;日期&quot;
+          width=&quot;150&quot;&gt;&lt;/meg-table-column&gt;
+        &lt;meg-table-column
+          property=&quot;name&quot;
+          label=&quot;姓名&quot;
+          width=&quot;200&quot;&gt;&lt;/meg-table-column&gt;
+        &lt;meg-table-column
+          property=&quot;address&quot;
+          label=&quot;地址&quot;&gt;&lt;/meg-table-column&gt;
+      &lt;/meg-table&gt;
+    &lt;/meg-dialog&gt;
+
+    &lt;!-- Form --&gt;
+    &lt;meg-button
+      @click=&quot;dialogFormVisible = true&quot;&gt;
+      打开嵌套表单的 Dialog
+    &lt;/meg-button&gt;
+
+    &lt;meg-dialog
+      title=&quot;收货地址&quot;
+      :visible.sync=&quot;dialogFormVisible&quot;&gt;
+      &lt;meg-form :model=&quot;form&quot;&gt;
+        &lt;meg-form-item
+          label=&quot;活动名称&quot;
+          :label-width=&quot;formLabelWidth&quot;&gt;
+          &lt;meg-input
+            v-model=&quot;form.name&quot;
+            autocomplete=&quot;off&quot;&gt;&lt;/meg-input&gt;
+        &lt;/meg-form-item&gt;
+        &lt;meg-form-item
+          label=&quot;活动区域&quot;
+          :label-width=&quot;formLabelWidth&quot;&gt;
+          &lt;meg-select
+            v-model=&quot;form.region&quot;
+            placeholder=&quot;请选择活动区域&quot;&gt;
+            &lt;meg-option
+              label=&quot;区域一&quot;
+              value=&quot;shanghai&quot;&gt;&lt;/meg-option&gt;
+            &lt;meg-option
+              label=&quot;区域二&quot;
+              value=&quot;beijing&quot;&gt;&lt;/meg-option&gt;
+          &lt;/meg-select&gt;
+        &lt;/meg-form-item&gt;
+      &lt;/meg-form&gt;
+      &lt;div
+        slot=&quot;footer&quot;
+        class=&quot;dialog-footer&quot;&gt;
+        &lt;meg-button @click=&quot;dialogFormVisible = false&quot;&gt;
+          取 消
+        &lt;/meg-button&gt;
+        &lt;meg-button
+          type=&quot;primary&quot;
+          @click=&quot;dialogFormVisible = false&quot;&gt;
+          确 定
+        &lt;/meg-button&gt;
+      &lt;/div&gt;
+    &lt;/meg-dialog&gt;
+  &lt;/div&gt;"> <input type="hidden" name="panel_js" value="3"> <input type="hidden" name="resources" value="https://unpkg.com/vue/dist/vue.js"> <!----> <button type="submit" data-tip="JSFiddle"><svg t="1547088289967" viewBox="0 0 1170 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1952" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon"><path d="M1028.571429 441.142857q63.428571 26.285714 102.571428 83.142857T1170.285714 650.857143q0 93.714286-67.428571 160.285714T940 877.714286q-2.285714 0-6.571429-0.285715t-6-0.285714H232q-97.142857-5.714286-164.571429-71.714286T0 645.142857q0-62.857143 31.428571-116t84-84q-6.857143-22.285714-6.857142-46.857143 0-65.714286 46.857142-112t113.714286-46.285714q54.285714 0 98.285714 33.142857 42.857143-88 127.142858-141.714286t186.571428-53.714285q94.857143 0 174.857143 46T982.571429 248.571429t46.571428 172q0 3.428571-0.285714 10.285714t-0.285714 10.285714zM267.428571 593.142857q0 69.714286 48 110.285714t118.857143 40.571429q78.285714 0 137.142857-56.571429-9.142857-11.428571-27.142857-32.285714T519.428571 626.285714q-38.285714 37.142857-82.285714 37.142857-31.428571 0-53.428571-19.142857T361.714286 594.285714q0-30.285714 22-49.714285t52.285714-19.428572q25.142857 0 48.285714 12t41.714286 31.428572 37.142857 42.857142 39.428572 46.857143 44 42.857143 55.428571 31.428572 69.428571 12q69.142857 0 116.857143-40.857143T936 594.857143q0-69.142857-48-109.714286t-118.285714-40.571428q-81.714286 0-137.714286 55.428571l53.142857 61.714286q37.714286-36.571429 81.142857-36.571429 29.714286 0 52.571429 18.857143t22.857143 48q0 32.571429-21.142857 52.285714t-53.714286 19.714286q-24.571429 0-47.142857-12t-41.142857-31.428571-37.428572-42.857143-39.714286-46.857143-44.285714-42.857143-55.142857-31.428571T434.285714 444.571429q-69.714286 0-118.285714 40.285714T267.428571 593.142857z" p-id="1953"></path></svg></button></form><form target="_blank" action="https://codesandbox.io/api/v1/sandboxes/define" method="post" class="demo-and-code-online-edit-wrapper"><!----> <!----> <input type="hidden" name="parameters" value="N4IgZglgNgpgziAXKAtgQwgOwHQCsHIgDGA9pgC4wVIgA6mEKADiQE7kAEAagK4wdhWJFBwDkANz6j6jFuw4BBJkwFCRo7AHolTbJJjTM9TDADu3PgApg9DnY4woiMQGI0y0QBpb9ysyholM6iADw6mgB8Xj52pMxkVORwzsCKyhwAvt6YGQCUIFkgOnp8SKCkFIk0IX5MAZQR9PQhACYQ4o2Y9hwhAIQAtP0cACpoAEawHIOd3SEoMADm_WM85ORkMfYAAkRQEEQA1gC8tCBtaFAkC6MTMFwQcBC3HEcc5Kx8pzPdHIDKRoAA-oAZXUA6pqACwjADwWgBC3DgAEQgFyumxCmnmSxWazInSRqP650uC02dnIEHIsBOIEAbKaAcljAAzqgAF1U6EjiIcQPJ6wbBwACemCI5LxVxusHuj1uXyZc0W_XI40miBagTQ5IWrAgLRhivFXR-dklSxlt36pCgPBQRm1OrsTCETBg7C5_MCMEZFstATGjnJgFPTQD45i7LfZTGryAALckARgArAAGL7InEG2BGkgms3fHV66WymDJ1PmgNWm128gO06YNDzf0F92e06AZc1ALAqVYDQZaofJACZo7GQBF41LEznjabMOmfpnB7mR0zutaSLb7eS0C0Wqx4HBm27xrWQPS4yiB9mp2mJQf9dmx_2lgKFljXX1BhwAGJsETTbFS9HrfM_HZ7Q78vC-IvqwKAiuy_CvO8ny9kyAIgqCgCqytCcIIgS95nssqzfnesw4jeTLEqSMDktSe50K6dgsmytycjyfKnDeIFgTRsBahmOJgK-zIoCQLQ7lxoHsZamaCSg_QkjAKAzvYNZQOSgDctoAFUoNoAD56bjqiByf0rbtqcYkADLblAADqwYhsJAaZlgTCrDJ3TiP0vH8fJ-mvtg5aVhRBb2GgqwkHEdQwJQ5IkGAYD7jiNmrGOsyYWJEl-LF9iia-iVSfZHByYpSmAFzKgD76hpPxacZOnmeShnGWZbYWbBlHjjicCODARDkJldiOc5AnuWuCwQBs3k-RwdRoEQMAhim_GsOSgDv0YAkAmAJdGykFZZBaZvOxIbPVAbZacBWAAByRUBuIFx8OScAhmgmALJdECRVKG39aO7U9Dij1bUNsnGeSBWADFyR2WidJokacHoQLgWAEr2V79O9z3bSlmFNbArXJbq8VpZJKDJTDYk4204gyXAlzkBVJAkJQrAA7saBwHAgFof0XEU3aq14Z-2FkBwf77McjFAVczHgc8rxgBcTVsz8gBryhwgARtjJMNfpiCs4krP4BiWtrktajBoKwXIA3YPMAfzaFC6xkECOLzp1T5gB2HhwgBZ2grmFqzjmgE5emE3t8yKe00mDIrU9QwHeIRwEQqpMOQnQwAAHnInD8WLPBQJwNjagqMqWLkHAZ90a7kDwrBdPnPwqmqGoys4ADaZc6lnMDBF24YAGz9NGkYdx20QI55TdiIA0c6APA6gByYb3AbLqu67BIAUHKAO62gBAeoAdmaAAJpuWAIuJgCZNoA-jaAPexHBRuGAAcHCACD6hg6lkecyY3zfRm3Hdd9GAAsE-Wv3wQj-P2STyua50znkvNem9d4HyPqfC-TJr71x-HfMQLd26dw7uGd-OpP5DzHmgn4U8AHJDEAvFe69t770PpGE-59L4_BgbfJ099H7IOjAAZmwd0DBohv6sN8v_GeBDgHELAWQihUD6oZAALq_zgQLa42ZhawGcGLKATVJHdCYq-ORA9FHKKZGJFIMl2FcLsL1J6wRDEcEbuGUxKi4FOg7FY2-jh2h2i5Ao621juiawHjXCRMkAEkGLmNexCN-IR1MdA9xAhXxGQ9KZcywRwxdiYHHKhdgMgAG4fAZHoOk5omgI5RxjgHcOJZYBhzySU0O9ACieBAFgficdsAhnICgKAZRiBkEoNQRAFFWjtA4GqJcyh9ye2qSAJgo0DhoAWDAPAcAyBtIqJ08gbT-K2kwPxXkEB4BtP0DQEOcBlkZCOUcoAA"> <input type="hidden" name="query" value="module=App.vue"> <!----> <!----> <button type="submit" data-tip="CodeSandbox"><svg t="1547088313123" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2783" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon"><path d="M737.828571 166.857143l0.457143-0.228572h0.228572L512 36.571429 285.6 166.628571h-0.228571l0.8 0.342858L100 274.285714v475.428572L512 987.428571l412-237.714285V274.285714l-186.171429-107.428571zM478.514286 890.971429L314.971429 796.571429V637.028571L166.857143 552.914286V353.028571l311.657143 179.771429v358.171429zM199.085714 294.285714l153.942857-88.914285 158.742858 91.085714 158.971428-91.314286 154.514286 89.142857-313.028572 180.571429-313.142857-180.571429zM857.142857 553.485714l-147.2 83.542857v158.971429l-164.457143 94.857143V533.028571L857.142857 353.257143v200.228571z" p-id="2784"></path></svg></button></form></div></div></section> <h3 id="嵌套的-dialog"><a href="#嵌套的-dialog" class="header-anchor">#</a> 嵌套的 Dialog</h3> <p>如果需要在一个 Dialog 内部嵌套另一个 Dialog，需要使用 <code>append-to-body</code> 属性。</p> <blockquote><p>正常情况下，我们不建议使用嵌套的 Dialog，如果需要在页面上同时显示多个 Dialog，可以将它们平级放置。对于确实需要嵌套 Dialog 的场景，我们提供了<code>append-to-body</code>属性。将内层 Dialog 的该属性设置为 true，它就会插入至 body 元素上，从而保证内外层 Dialog 和遮罩层级关系的正确。</p></blockquote> <section class="demo-and-code-wrapper"><div class="demo-wrapper"><div><button type="button" class="meg-button meg-button--default"><!----> <!----> <span>
+    点击打开外层 Dialog
+  </span></button> <div class="meg-dialog__wrapper is-middle" style="display:none;"><div role="dialog" aria-modal="true" aria-label="外层 Dialog" class="meg-dialog"><div class="meg-dialog__header"><div class="meg-dialog__title">
+            外层 Dialog
+          </div></div> <button type="button" aria-label="Close" class="meg-dialog__header-btn"><svg data-svg-icon="close_1" version="1.1" viewBox="0 0 32 32" class="meg-dialog__close meg-icon-close meg-icon meg-fill"><path pid="0" _fill="#435068" d="M29.822 4.667l-2.489-2.489L16 13.467 4.667 2.178 2.178 4.667 13.467 16 2.178 27.333l2.489 2.489L16 18.533l11.333 11.289 2.489-2.489L18.533 16z"/></svg></button> <!----> <div class="meg-dialog__footer"><div class="dialog-footer"><button type="button" class="meg-button meg-button--default"><!----> <!----> <span>
+        取 消
+      </span></button> <button type="button" class="meg-button meg-button--primary"><!----> <!----> <span>
+        打开内层 Dialog
+      </span></button></div></div></div></div></div></div> <div class="code-wrapper" style="max-height:0px;"><div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-button</span>
+      <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>outerVisible = true<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      点击打开外层 Dialog
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-button</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-dialog</span>
+      <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>外层 Dialog<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">:visible.sync</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>outerVisible<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-dialog</span>
+        <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>30%<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>内层 Dialog<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">:visible.sync</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>innerVisible<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">append-to-body</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-dialog</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span>
+        <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>footer<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialog-footer<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>outerVisible = false<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+          取 消
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-button</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-button</span>
+          <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>primary<span class="token punctuation">&quot;</span></span>
+          <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>innerVisible = true<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+          打开内层 Dialog
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-button</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-dialog</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      outerVisible<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      innerVisible<span class="token punctuation">:</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div> <div class="code-control" style="position:;"><span class="control-btn" style="display:;"><span class="control-text">show code</span> <span class="arrow-icon-wrap"><i class="arrow-icon" style="transform:rotate(90deg);"><svg version="1.1" viewBox="0 0 72 72" style="width: 10px; height: 10px;"><defs></defs><path d="M57.9,41.4L24.9,70.2c-3,2.6-7.5,2.3-10.2-0.7c-1.1-1.3-1.8-3-1.8-4.7V7.2c0-4,3.2-7.2,7.2-7.2c1.7,0,3.4,0.6,4.7,1.8l32.9,28.8c3,2.6,3.3,7.2,0.7,10.2C58.3,41,58.1,41.2,57.9,41.4z"></path></svg></i></span></span> <div class="online-wrapper"><form target="_blank" action="https://codepen.io/pen/define" method="post" class="demo-and-code-online-edit-wrapper"><input type="hidden" name="data" value="{&quot;js&quot;:&quot;new Vue({\n\tel: '#app', \n\tdata() {\n    return {\n      outerVisible: false,\n      innerVisible: false\n    };\n  }\n};\n})&quot;,&quot;css&quot;:&quot;&quot;,&quot;html&quot;:&quot;&lt;div id=\&quot;app\&quot;&gt;\n\n&lt;div&gt;\n    &lt;meg-button\n      @click=\&quot;outerVisible = true\&quot;&gt;\n      点击打开外层 Dialog\n    &lt;/meg-button&gt;\n\n    &lt;meg-dialog\n      title=\&quot;外层 Dialog\&quot;\n      :visible.sync=\&quot;outerVisible\&quot;&gt;\n      &lt;meg-dialog\n        width=\&quot;30%\&quot;\n        title=\&quot;内层 Dialog\&quot;\n        :visible.sync=\&quot;innerVisible\&quot;\n        append-to-body&gt;\n      &lt;/meg-dialog&gt;\n      &lt;div\n        slot=\&quot;footer\&quot;\n        class=\&quot;dialog-footer\&quot;&gt;\n        &lt;meg-button @click=\&quot;outerVisible = false\&quot;&gt;\n          取 消\n        &lt;/meg-button&gt;\n        &lt;meg-button\n          type=\&quot;primary\&quot;\n          @click=\&quot;innerVisible = true\&quot;&gt;\n          打开内层 Dialog\n        &lt;/meg-button&gt;\n      &lt;/div&gt;\n    &lt;/meg-dialog&gt;\n  &lt;/div&gt;\n\n&lt;/div&gt;&quot;,&quot;layout&quot;:&quot;left&quot;,&quot;editors&quot;:&quot;101&quot;,&quot;js_external&quot;:&quot;https://unpkg.com/vue/dist/vue.js&quot;,&quot;css_external&quot;:&quot;&quot;,&quot;js_pre_processor&quot;:&quot;babel&quot;}"> <!----> <!----> <button type="submit" data-tip="Codepen"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" xml:space="preserve"><g><path d="M250.001,0C111.927,0,0,111.927,0,250.001C0,388.077,111.927,500,250.001,500C388.073,500,500,388.077,500,250.001
+        C500,111.927,388.073,0,250.001,0z M250.001,458.943c-115.212,0-208.941-93.733-208.941-208.942
+        c0-115.208,93.729-208.941,208.941-208.941c115.208,0,208.938,93.733,208.938,208.941
+        C458.939,365.21,365.21,458.943,250.001,458.943z"></path> <path d="M404.462,201.172c-0.028-0.195-0.076-0.382-0.109-0.577c-0.065-0.374-0.135-0.748-0.232-1.114
+        c-0.057-0.22-0.138-0.431-0.206-0.642c-0.106-0.326-0.212-0.651-0.342-0.968c-0.091-0.22-0.196-0.439-0.297-0.651
+        c-0.14-0.3-0.285-0.593-0.452-0.877c-0.122-0.212-0.251-0.416-0.377-0.618c-0.18-0.277-0.362-0.546-0.562-0.806
+        c-0.146-0.194-0.3-0.39-0.454-0.577c-0.212-0.243-0.432-0.487-0.664-0.716c-0.174-0.178-0.346-0.357-0.528-0.521
+        c-0.244-0.219-0.496-0.431-0.752-0.633c-0.198-0.155-0.395-0.31-0.602-0.456c-0.078-0.049-0.146-0.114-0.22-0.163L257.369,97.656
+        c-4.464-2.976-10.274-2.976-14.738,0l-141.295,94.196c-0.073,0.049-0.142,0.114-0.219,0.163c-0.208,0.146-0.403,0.301-0.598,0.456
+        c-0.26,0.203-0.512,0.415-0.752,0.633c-0.187,0.164-0.357,0.342-0.533,0.521c-0.231,0.229-0.451,0.473-0.658,0.716
+        c-0.159,0.188-0.313,0.383-0.459,0.577c-0.195,0.26-0.383,0.529-0.557,0.806c-0.134,0.203-0.26,0.406-0.382,0.618
+        c-0.163,0.284-0.309,0.577-0.451,0.877c-0.102,0.211-0.208,0.431-0.297,0.651c-0.13,0.317-0.236,0.642-0.341,0.968
+        c-0.07,0.211-0.146,0.422-0.208,0.642c-0.097,0.366-0.162,0.74-0.231,1.114c-0.032,0.195-0.081,0.382-0.106,0.577
+        c-0.077,0.569-0.122,1.146-0.122,1.732v94.197c0,0.585,0.044,1.162,0.122,1.74c0.025,0.188,0.074,0.382,0.106,0.568
+        c0.069,0.374,0.134,0.748,0.231,1.114c0.062,0.22,0.138,0.432,0.208,0.643c0.105,0.324,0.211,0.65,0.341,0.975
+        c0.089,0.222,0.195,0.433,0.297,0.645c0.143,0.3,0.289,0.592,0.451,0.885c0.122,0.204,0.248,0.406,0.382,0.61
+        c0.174,0.276,0.362,0.545,0.557,0.806c0.146,0.203,0.301,0.391,0.459,0.577c0.208,0.243,0.427,0.488,0.658,0.716
+        c0.175,0.178,0.346,0.357,0.533,0.52c0.24,0.221,0.492,0.432,0.752,0.635c0.195,0.155,0.391,0.31,0.598,0.454
+        c0.077,0.05,0.146,0.115,0.219,0.163l141.295,94.197c2.231,1.487,4.802,2.236,7.371,2.236c2.566,0,5.135-0.749,7.368-2.236
+        l141.295-94.197c0.074-0.048,0.142-0.113,0.22-0.163c0.207-0.145,0.403-0.299,0.602-0.454c0.256-0.203,0.508-0.414,0.752-0.635
+        c0.183-0.162,0.354-0.342,0.528-0.52c0.232-0.228,0.452-0.473,0.664-0.716c0.154-0.187,0.308-0.374,0.454-0.577
+        c0.2-0.261,0.383-0.529,0.562-0.806c0.126-0.204,0.255-0.406,0.377-0.61c0.167-0.293,0.312-0.585,0.452-0.885
+        c0.101-0.212,0.206-0.423,0.297-0.645c0.13-0.324,0.235-0.65,0.342-0.975c0.068-0.211,0.149-0.423,0.206-0.643
+        c0.098-0.366,0.167-0.74,0.232-1.114c0.033-0.187,0.081-0.381,0.109-0.568c0.073-0.578,0.119-1.155,0.119-1.74v-94.197
+        C404.581,202.318,404.535,201.741,404.462,201.172z M263.286,133.533l104.088,69.387l-46.493,31.103l-57.595-38.527V133.533z
+         M236.715,133.533v61.963l-57.592,38.527l-46.497-31.103L236.715,133.533z M121.99,227.771l33.238,22.231l-33.238,22.233V227.771z
+         M236.715,366.471l-104.088-69.388l46.497-31.094l57.592,38.52V366.471z M250.001,281.431l-46.988-31.429l46.988-31.428
+        l46.985,31.428L250.001,281.431z M263.286,366.471v-61.962l57.595-38.52l46.493,31.094L263.286,366.471z M378.01,272.234
+        l-33.233-22.233l33.233-22.231V272.234z"></path></g></svg></button></form><form target="_blank" action="https://jsfiddle.net/api/post/library/pure" method="post" class="demo-and-code-online-edit-wrapper"><!----> <input type="hidden" name="js" value="export default {
+  data() {
+    return {
+      outerVisible: false,
+      innerVisible: false
+    };
+  }
+};"> <input type="hidden" name="css" value=""> <input type="hidden" name="html" value="&lt;div&gt;
+    &lt;meg-button
+      @click=&quot;outerVisible = true&quot;&gt;
+      点击打开外层 Dialog
+    &lt;/meg-button&gt;
+
+    &lt;meg-dialog
+      title=&quot;外层 Dialog&quot;
+      :visible.sync=&quot;outerVisible&quot;&gt;
+      &lt;meg-dialog
+        width=&quot;30%&quot;
+        title=&quot;内层 Dialog&quot;
+        :visible.sync=&quot;innerVisible&quot;
+        append-to-body&gt;
+      &lt;/meg-dialog&gt;
+      &lt;div
+        slot=&quot;footer&quot;
+        class=&quot;dialog-footer&quot;&gt;
+        &lt;meg-button @click=&quot;outerVisible = false&quot;&gt;
+          取 消
+        &lt;/meg-button&gt;
+        &lt;meg-button
+          type=&quot;primary&quot;
+          @click=&quot;innerVisible = true&quot;&gt;
+          打开内层 Dialog
+        &lt;/meg-button&gt;
+      &lt;/div&gt;
+    &lt;/meg-dialog&gt;
+  &lt;/div&gt;"> <input type="hidden" name="panel_js" value="3"> <input type="hidden" name="resources" value="https://unpkg.com/vue/dist/vue.js"> <!----> <button type="submit" data-tip="JSFiddle"><svg t="1547088289967" viewBox="0 0 1170 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1952" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon"><path d="M1028.571429 441.142857q63.428571 26.285714 102.571428 83.142857T1170.285714 650.857143q0 93.714286-67.428571 160.285714T940 877.714286q-2.285714 0-6.571429-0.285715t-6-0.285714H232q-97.142857-5.714286-164.571429-71.714286T0 645.142857q0-62.857143 31.428571-116t84-84q-6.857143-22.285714-6.857142-46.857143 0-65.714286 46.857142-112t113.714286-46.285714q54.285714 0 98.285714 33.142857 42.857143-88 127.142858-141.714286t186.571428-53.714285q94.857143 0 174.857143 46T982.571429 248.571429t46.571428 172q0 3.428571-0.285714 10.285714t-0.285714 10.285714zM267.428571 593.142857q0 69.714286 48 110.285714t118.857143 40.571429q78.285714 0 137.142857-56.571429-9.142857-11.428571-27.142857-32.285714T519.428571 626.285714q-38.285714 37.142857-82.285714 37.142857-31.428571 0-53.428571-19.142857T361.714286 594.285714q0-30.285714 22-49.714285t52.285714-19.428572q25.142857 0 48.285714 12t41.714286 31.428572 37.142857 42.857142 39.428572 46.857143 44 42.857143 55.428571 31.428572 69.428571 12q69.142857 0 116.857143-40.857143T936 594.857143q0-69.142857-48-109.714286t-118.285714-40.571428q-81.714286 0-137.714286 55.428571l53.142857 61.714286q37.714286-36.571429 81.142857-36.571429 29.714286 0 52.571429 18.857143t22.857143 48q0 32.571429-21.142857 52.285714t-53.714286 19.714286q-24.571429 0-47.142857-12t-41.142857-31.428571-37.428572-42.857143-39.714286-46.857143-44.285714-42.857143-55.142857-31.428571T434.285714 444.571429q-69.714286 0-118.285714 40.285714T267.428571 593.142857z" p-id="1953"></path></svg></button></form><form target="_blank" action="https://codesandbox.io/api/v1/sandboxes/define" method="post" class="demo-and-code-online-edit-wrapper"><!----> <!----> <input type="hidden" name="parameters" value="N4IgZglgNgpgziAXKAtgQwgOwHQCsHIgDGA9pgC4wVIgA6mEKADiQE7kAEAagK4wdhWJFBwDkANz6j6jFuw4BBJkwFCRo7AHolTbJJjTM9TDADu3PgApg9DnY4woiMQGI0y0QBpb9ysyholM6iADw6mgB8Xj52pMxkVORwzsCKyhwAvt6YGQCUIFkgOnp8SKCkFIk0IX5MAZQR9PQhACYQ4o2Y9hwhKDAA5gC0AEY85ORkMfYAAkRQEEQA1gC8tCAkYzCsXBBwEMOwHMsc5Kx8a53ddoCdDoDfioDKRoAA-oBomoBCOhwAIhBoUCT9UyFNH0hqNxmROgDgYM2j8_lM7OQIORYKsQG9Pt9fv86F0rohxLt9rBsHAAJ6YIiojaUbaEg4wC7wnpQmFYpl2UwQFrkAAWqIAzAAGACka3ZJyRKLWgFDFd5fWHY8X4unEskU1FYEy0vb0sW4q4cdxMKgtQYTEYkFqky5XQEszF_G3dVrtcVwX7kVFgEgkGl6g2xAJwOCo1l_Qbe31bRn621Q0ETLqzeZLKmbbVE_jHMA_OAMkBOgOANeUOIAI23FdoGIzGicLzvjNcmsYN5FJxtRTFYjDQrFJ_oDdmTCxWa01Wx2OsOx1O5wL4rsT1lGIVFaBVYT4KZgLaHQBa6GYf6Nu37QhmEBtXqMDPITgRC7THInRgAA85JwWjAczwoJwbLiWkCNBLFyDh_26VgYHIHhWC6cCrmpccVRgZwcygPNsgNMcM3pVDcwZWMMgAbh8DJ6GI5pNDvB8nyac84FbWAbyoxjr3oApPBALBPxfbAeXIFAoDKYgyEoahEBxF1xA4LlUSNC4Tw6DiQCYNAljQfoYDwOAyGEioxPIYTP2NTBPwpCB4GE_QaCvBiCgyByMiAA"> <input type="hidden" name="query" value="module=App.vue"> <!----> <!----> <button type="submit" data-tip="CodeSandbox"><svg t="1547088313123" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2783" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon"><path d="M737.828571 166.857143l0.457143-0.228572h0.228572L512 36.571429 285.6 166.628571h-0.228571l0.8 0.342858L100 274.285714v475.428572L512 987.428571l412-237.714285V274.285714l-186.171429-107.428571zM478.514286 890.971429L314.971429 796.571429V637.028571L166.857143 552.914286V353.028571l311.657143 179.771429v358.171429zM199.085714 294.285714l153.942857-88.914285 158.742858 91.085714 158.971428-91.314286 154.514286 89.142857-313.028572 180.571429-313.142857-180.571429zM857.142857 553.485714l-147.2 83.542857v158.971429l-164.457143 94.857143V533.028571L857.142857 353.257143v200.228571z" p-id="2784"></path></svg></button></form></div></div></section> <h3 id="左右居中布局"><a href="#左右居中布局" class="header-anchor">#</a> 左右居中布局</h3> <p>标题和底部可水平居中</p> <blockquote><p>将<code>center</code>设置为<code>true</code>即可使标题和底部居中。<code>center</code>仅影响标题和底部区域。Dialog 的内容是任意的，在一些情况下，内容并不适合居中布局。如果需要内容也水平居中，请自行为其添加 CSS。</p></blockquote> <section class="demo-and-code-wrapper"><div class="demo-wrapper"><div><button type="button" class="meg-button meg-button--default"><!----> <!----> <span>
+    点击打开 Dialog
+  </span></button> <div class="meg-dialog__wrapper is-middle" style="display:none;"><div role="dialog" aria-modal="true" aria-label="提示" class="meg-dialog meg-dialog--center" style="width:30%;"><div class="meg-dialog__header"><div class="meg-dialog__title">
+            提示
+          </div></div> <button type="button" aria-label="Close" class="meg-dialog__header-btn"><svg data-svg-icon="close_1" version="1.1" viewBox="0 0 32 32" class="meg-dialog__close meg-icon-close meg-icon meg-fill"><path pid="0" _fill="#435068" d="M29.822 4.667l-2.489-2.489L16 13.467 4.667 2.178 2.178 4.667 13.467 16 2.178 27.333l2.489 2.489L16 18.533l11.333 11.289 2.489-2.489L18.533 16z"/></svg></button> <!----> <div class="meg-dialog__footer"><span class="dialog-footer"><button type="button" class="meg-button meg-button--default"><!----> <!----> <span>取 消</span></button> <button type="button" class="meg-button meg-button--primary"><!----> <!----> <span>确 定</span></button></span></div></div></div></div></div> <div class="code-wrapper" style="max-height:0px;"><div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-button</span>
+      <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>centerDialogVisible = true<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      点击打开 Dialog
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-button</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-dialog</span>
+      <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>提示<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">:visible.sync</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>centerDialogVisible<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>30%<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">center</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>需要注意的是内容是默认不居中的<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span>
+        <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>footer<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialog-footer<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>centerDialogVisible = false<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>取 消<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-button</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-button</span>
+          <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>primary<span class="token punctuation">&quot;</span></span>
+          <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>centerDialogVisible = false<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>确 定<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-button</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-dialog</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      centerDialogVisible<span class="token punctuation">:</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div> <div class="code-control" style="position:;"><span class="control-btn" style="display:;"><span class="control-text">show code</span> <span class="arrow-icon-wrap"><i class="arrow-icon" style="transform:rotate(90deg);"><svg version="1.1" viewBox="0 0 72 72" style="width: 10px; height: 10px;"><defs></defs><path d="M57.9,41.4L24.9,70.2c-3,2.6-7.5,2.3-10.2-0.7c-1.1-1.3-1.8-3-1.8-4.7V7.2c0-4,3.2-7.2,7.2-7.2c1.7,0,3.4,0.6,4.7,1.8l32.9,28.8c3,2.6,3.3,7.2,0.7,10.2C58.3,41,58.1,41.2,57.9,41.4z"></path></svg></i></span></span> <div class="online-wrapper"><form target="_blank" action="https://codepen.io/pen/define" method="post" class="demo-and-code-online-edit-wrapper"><input type="hidden" name="data" value="{&quot;js&quot;:&quot;new Vue({\n\tel: '#app', \n\tdata() {\n    return {\n      centerDialogVisible: false\n    };\n  }\n};\n})&quot;,&quot;css&quot;:&quot;&quot;,&quot;html&quot;:&quot;&lt;div id=\&quot;app\&quot;&gt;\n\n&lt;div&gt;\n    &lt;meg-button\n      @click=\&quot;centerDialogVisible = true\&quot;&gt;\n      点击打开 Dialog\n    &lt;/meg-button&gt;\n\n    &lt;meg-dialog\n      title=\&quot;提示\&quot;\n      :visible.sync=\&quot;centerDialogVisible\&quot;\n      width=\&quot;30%\&quot;\n      center&gt;\n      &lt;span&gt;需要注意的是内容是默认不居中的&lt;/span&gt;\n      &lt;span\n        slot=\&quot;footer\&quot;\n        class=\&quot;dialog-footer\&quot;&gt;\n        &lt;meg-button @click=\&quot;centerDialogVisible = false\&quot;&gt;取 消&lt;/meg-button&gt;\n        &lt;meg-button\n          type=\&quot;primary\&quot;\n          @click=\&quot;centerDialogVisible = false\&quot;&gt;确 定&lt;/meg-button&gt;\n      &lt;/span&gt;\n    &lt;/meg-dialog&gt;\n  &lt;/div&gt;\n\n&lt;/div&gt;&quot;,&quot;layout&quot;:&quot;left&quot;,&quot;editors&quot;:&quot;101&quot;,&quot;js_external&quot;:&quot;https://unpkg.com/vue/dist/vue.js&quot;,&quot;css_external&quot;:&quot;&quot;,&quot;js_pre_processor&quot;:&quot;babel&quot;}"> <!----> <!----> <button type="submit" data-tip="Codepen"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" xml:space="preserve"><g><path d="M250.001,0C111.927,0,0,111.927,0,250.001C0,388.077,111.927,500,250.001,500C388.073,500,500,388.077,500,250.001
+        C500,111.927,388.073,0,250.001,0z M250.001,458.943c-115.212,0-208.941-93.733-208.941-208.942
+        c0-115.208,93.729-208.941,208.941-208.941c115.208,0,208.938,93.733,208.938,208.941
+        C458.939,365.21,365.21,458.943,250.001,458.943z"></path> <path d="M404.462,201.172c-0.028-0.195-0.076-0.382-0.109-0.577c-0.065-0.374-0.135-0.748-0.232-1.114
+        c-0.057-0.22-0.138-0.431-0.206-0.642c-0.106-0.326-0.212-0.651-0.342-0.968c-0.091-0.22-0.196-0.439-0.297-0.651
+        c-0.14-0.3-0.285-0.593-0.452-0.877c-0.122-0.212-0.251-0.416-0.377-0.618c-0.18-0.277-0.362-0.546-0.562-0.806
+        c-0.146-0.194-0.3-0.39-0.454-0.577c-0.212-0.243-0.432-0.487-0.664-0.716c-0.174-0.178-0.346-0.357-0.528-0.521
+        c-0.244-0.219-0.496-0.431-0.752-0.633c-0.198-0.155-0.395-0.31-0.602-0.456c-0.078-0.049-0.146-0.114-0.22-0.163L257.369,97.656
+        c-4.464-2.976-10.274-2.976-14.738,0l-141.295,94.196c-0.073,0.049-0.142,0.114-0.219,0.163c-0.208,0.146-0.403,0.301-0.598,0.456
+        c-0.26,0.203-0.512,0.415-0.752,0.633c-0.187,0.164-0.357,0.342-0.533,0.521c-0.231,0.229-0.451,0.473-0.658,0.716
+        c-0.159,0.188-0.313,0.383-0.459,0.577c-0.195,0.26-0.383,0.529-0.557,0.806c-0.134,0.203-0.26,0.406-0.382,0.618
+        c-0.163,0.284-0.309,0.577-0.451,0.877c-0.102,0.211-0.208,0.431-0.297,0.651c-0.13,0.317-0.236,0.642-0.341,0.968
+        c-0.07,0.211-0.146,0.422-0.208,0.642c-0.097,0.366-0.162,0.74-0.231,1.114c-0.032,0.195-0.081,0.382-0.106,0.577
+        c-0.077,0.569-0.122,1.146-0.122,1.732v94.197c0,0.585,0.044,1.162,0.122,1.74c0.025,0.188,0.074,0.382,0.106,0.568
+        c0.069,0.374,0.134,0.748,0.231,1.114c0.062,0.22,0.138,0.432,0.208,0.643c0.105,0.324,0.211,0.65,0.341,0.975
+        c0.089,0.222,0.195,0.433,0.297,0.645c0.143,0.3,0.289,0.592,0.451,0.885c0.122,0.204,0.248,0.406,0.382,0.61
+        c0.174,0.276,0.362,0.545,0.557,0.806c0.146,0.203,0.301,0.391,0.459,0.577c0.208,0.243,0.427,0.488,0.658,0.716
+        c0.175,0.178,0.346,0.357,0.533,0.52c0.24,0.221,0.492,0.432,0.752,0.635c0.195,0.155,0.391,0.31,0.598,0.454
+        c0.077,0.05,0.146,0.115,0.219,0.163l141.295,94.197c2.231,1.487,4.802,2.236,7.371,2.236c2.566,0,5.135-0.749,7.368-2.236
+        l141.295-94.197c0.074-0.048,0.142-0.113,0.22-0.163c0.207-0.145,0.403-0.299,0.602-0.454c0.256-0.203,0.508-0.414,0.752-0.635
+        c0.183-0.162,0.354-0.342,0.528-0.52c0.232-0.228,0.452-0.473,0.664-0.716c0.154-0.187,0.308-0.374,0.454-0.577
+        c0.2-0.261,0.383-0.529,0.562-0.806c0.126-0.204,0.255-0.406,0.377-0.61c0.167-0.293,0.312-0.585,0.452-0.885
+        c0.101-0.212,0.206-0.423,0.297-0.645c0.13-0.324,0.235-0.65,0.342-0.975c0.068-0.211,0.149-0.423,0.206-0.643
+        c0.098-0.366,0.167-0.74,0.232-1.114c0.033-0.187,0.081-0.381,0.109-0.568c0.073-0.578,0.119-1.155,0.119-1.74v-94.197
+        C404.581,202.318,404.535,201.741,404.462,201.172z M263.286,133.533l104.088,69.387l-46.493,31.103l-57.595-38.527V133.533z
+         M236.715,133.533v61.963l-57.592,38.527l-46.497-31.103L236.715,133.533z M121.99,227.771l33.238,22.231l-33.238,22.233V227.771z
+         M236.715,366.471l-104.088-69.388l46.497-31.094l57.592,38.52V366.471z M250.001,281.431l-46.988-31.429l46.988-31.428
+        l46.985,31.428L250.001,281.431z M263.286,366.471v-61.962l57.595-38.52l46.493,31.094L263.286,366.471z M378.01,272.234
+        l-33.233-22.233l33.233-22.231V272.234z"></path></g></svg></button></form><form target="_blank" action="https://jsfiddle.net/api/post/library/pure" method="post" class="demo-and-code-online-edit-wrapper"><!----> <input type="hidden" name="js" value="export default {
+  data() {
+    return {
+      centerDialogVisible: false
+    };
+  }
+};"> <input type="hidden" name="css" value=""> <input type="hidden" name="html" value="&lt;div&gt;
+    &lt;meg-button
+      @click=&quot;centerDialogVisible = true&quot;&gt;
+      点击打开 Dialog
+    &lt;/meg-button&gt;
+
+    &lt;meg-dialog
+      title=&quot;提示&quot;
+      :visible.sync=&quot;centerDialogVisible&quot;
+      width=&quot;30%&quot;
+      center&gt;
+      &lt;span&gt;需要注意的是内容是默认不居中的&lt;/span&gt;
+      &lt;span
+        slot=&quot;footer&quot;
+        class=&quot;dialog-footer&quot;&gt;
+        &lt;meg-button @click=&quot;centerDialogVisible = false&quot;&gt;取 消&lt;/meg-button&gt;
+        &lt;meg-button
+          type=&quot;primary&quot;
+          @click=&quot;centerDialogVisible = false&quot;&gt;确 定&lt;/meg-button&gt;
+      &lt;/span&gt;
+    &lt;/meg-dialog&gt;
+  &lt;/div&gt;"> <input type="hidden" name="panel_js" value="3"> <input type="hidden" name="resources" value="https://unpkg.com/vue/dist/vue.js"> <!----> <button type="submit" data-tip="JSFiddle"><svg t="1547088289967" viewBox="0 0 1170 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1952" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon"><path d="M1028.571429 441.142857q63.428571 26.285714 102.571428 83.142857T1170.285714 650.857143q0 93.714286-67.428571 160.285714T940 877.714286q-2.285714 0-6.571429-0.285715t-6-0.285714H232q-97.142857-5.714286-164.571429-71.714286T0 645.142857q0-62.857143 31.428571-116t84-84q-6.857143-22.285714-6.857142-46.857143 0-65.714286 46.857142-112t113.714286-46.285714q54.285714 0 98.285714 33.142857 42.857143-88 127.142858-141.714286t186.571428-53.714285q94.857143 0 174.857143 46T982.571429 248.571429t46.571428 172q0 3.428571-0.285714 10.285714t-0.285714 10.285714zM267.428571 593.142857q0 69.714286 48 110.285714t118.857143 40.571429q78.285714 0 137.142857-56.571429-9.142857-11.428571-27.142857-32.285714T519.428571 626.285714q-38.285714 37.142857-82.285714 37.142857-31.428571 0-53.428571-19.142857T361.714286 594.285714q0-30.285714 22-49.714285t52.285714-19.428572q25.142857 0 48.285714 12t41.714286 31.428572 37.142857 42.857142 39.428572 46.857143 44 42.857143 55.428571 31.428572 69.428571 12q69.142857 0 116.857143-40.857143T936 594.857143q0-69.142857-48-109.714286t-118.285714-40.571428q-81.714286 0-137.714286 55.428571l53.142857 61.714286q37.714286-36.571429 81.142857-36.571429 29.714286 0 52.571429 18.857143t22.857143 48q0 32.571429-21.142857 52.285714t-53.714286 19.714286q-24.571429 0-47.142857-12t-41.142857-31.428571-37.428572-42.857143-39.714286-46.857143-44.285714-42.857143-55.142857-31.428571T434.285714 444.571429q-69.714286 0-118.285714 40.285714T267.428571 593.142857z" p-id="1953"></path></svg></button></form><form target="_blank" action="https://codesandbox.io/api/v1/sandboxes/define" method="post" class="demo-and-code-online-edit-wrapper"><!----> <!----> <input type="hidden" name="parameters" value="N4IgZglgNgpgziAXKAtgQwgOwHQCsHIgDGA9pgC4wVIgA6mEKADiQE7kAEAagK4wdhWJFBwDkANz6j6jFuw4BBJkwFCRo7AHolTbJJjTM9TDADu3PgApg9DnY4woiMQGI0y0QBpb9ysyholM6iADw6mgB8Xj52pMxkVORwzsCKyhwAvt6YGQCUIFkgOnp8SKCkFIk0IX5MAZQR9PQhACYQ4o2Y9hwhKDAA5gC0AEY85ORkMfYAAkRQEEQA1gC8tMSJMKwAIhBoUCT9XBBwEMOwHMsc5Kx8a53ddoCdDoDfioDKRoAA-hw7ewdTIZp9IajcZkTp_QGDNo_fpTOzkCDkWCrECABeNAFyea1hHEQ4mOp1g2DgAE9MERkUQNttdvtDnizjBMV0HqYIC1yAALZEAZgADABSRkPDgUyqse4PEJwJhoTARQAA6YBAyMAFzaAeENACFugHozQChioBO7Q1gA28wAl0YBYOUAojqAWjk1f8pTLxd1JdKjEyhXB9uRkWASCRKKxBULhQE4HBkVCaYNPd7NncsXZegMRmMJl1ZvMluTKd8aUcTvSLgI9nAGSAIoA15Q4gAjbf4Q4FJu0S6uJybO_3kIlMGDIpisRhoVhEv3-jgphYrNYin2Zg7Z_H8S5gAtFiKAOw8OIAs7Sr8ZroKx1sddY3Q1DB3F_zaHSamH-tXqMDBl7gRG7THInRgAA85JwWjB5zwoJwbCZFpAjQSxcg4QDulYGByB4Vgukgh5x02SdaRzWBnHnKBCymDIAG4fAyeh8OaTQHyfF8L0lVtYDva0aNvegCk8EAsG_N9sHZcgUCgMpiDIShqEQOhLzPDhWWRdwmDuU92giZiQGlJY0H6GA8DgMg-IqQTyD47920wb9SQgeA-P0GgbzgXSMhsmygA"> <input type="hidden" name="query" value="module=App.vue"> <!----> <!----> <button type="submit" data-tip="CodeSandbox"><svg t="1547088313123" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2783" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon"><path d="M737.828571 166.857143l0.457143-0.228572h0.228572L512 36.571429 285.6 166.628571h-0.228571l0.8 0.342858L100 274.285714v475.428572L512 987.428571l412-237.714285V274.285714l-186.171429-107.428571zM478.514286 890.971429L314.971429 796.571429V637.028571L166.857143 552.914286V353.028571l311.657143 179.771429v358.171429zM199.085714 294.285714l153.942857-88.914285 158.742858 91.085714 158.971428-91.314286 154.514286 89.142857-313.028572 180.571429-313.142857-180.571429zM857.142857 553.485714l-147.2 83.542857v158.971429l-164.457143 94.857143V533.028571L857.142857 353.257143v200.228571z" p-id="2784"></path></svg></button></form></div></div></section> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>Dialog 的内容是懒渲染的，即在第一次被打开之前，传入的默认 slot 不会被渲染到 DOM 上。因此，如果需要执行 DOM 操作，或通过 <code>ref</code> 获取相应组件，请在 <code>open</code> 事件回调中进行。</p></div> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>如果 <code>visible</code> 属性绑定的变量位于 Vuex 的 store 内，那么 <code>.sync</code> 不会正常工作。此时需要去除 <code>.sync</code> 修饰符，同时监听 Dialog 的 <code>open</code> 和 <code>close</code> 事件，在事件回调中执行 Vuex 中对应的 mutation 更新 <code>visible</code> 属性绑定的变量的值。</p></div> <h3 id="上下居中"><a href="#上下居中" class="header-anchor">#</a> 上下居中</h3> <p>默认弹窗上下严格居中，但由于flex布局局限，导致弹窗过长的时候，顶部有被隐藏可能，可设置<code>middle</code>参数false来去除居中布局，使用 top 配置距离顶部距离，默认'15vh'</p> <section class="demo-and-code-wrapper"><div class="demo-wrapper"><div class="block" data-v-2e2c006f><button type="button" class="meg-button meg-button--default" data-v-2e2c006f><!----> <!----> <span>
+    点击打开 Dialog
+  </span></button> <div class="meg-dialog__wrapper" style="display:none;" data-v-2e2c006f><div role="dialog" aria-modal="true" aria-label="提示" class="meg-dialog" style="margin-top:10vh;width:30%;"><div class="meg-dialog__header"><div class="meg-dialog__title">
+            提示
+          </div></div> <button type="button" aria-label="Close" class="meg-dialog__header-btn"><svg data-svg-icon="close_1" version="1.1" viewBox="0 0 32 32" class="meg-dialog__close meg-icon-close meg-icon meg-fill"><path pid="0" _fill="#435068" d="M29.822 4.667l-2.489-2.489L16 13.467 4.667 2.178 2.178 4.667 13.467 16 2.178 27.333l2.489 2.489L16 18.533l11.333 11.289 2.489-2.489L18.533 16z"/></svg></button> <!----> <div class="meg-dialog__footer"><span class="dialog-footer" data-v-2e2c006f><button type="button" class="meg-button meg-button--primary" data-v-2e2c006f><!----> <!----> <span>确 定</span></button> <button type="button" class="meg-button meg-button--default" data-v-2e2c006f><!----> <!----> <span>取 消</span></button></span></div></div></div></div></div> <div class="code-wrapper" style="max-height:0px;"><div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>block<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-button</span>
+      <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialogVisible = true<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      点击打开 Dialog
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-button</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-dialog</span>
+      <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>提示<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">:visible.sync</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialogVisible<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">:middle</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>false<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>30%<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span>
+        <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>footer<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialog-footer<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-button</span>
+          <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>primary<span class="token punctuation">&quot;</span></span>
+          <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialogVisible = false<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>确 定<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-button</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialogVisible = false<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>取 消<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-button</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-dialog</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      dialogVisible<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      middle<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      active<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>scss<span class="token punctuation">&quot;</span></span> <span class="token attr-name">scoped</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">.block</span> <span class="token punctuation">{</span>
+    <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div> <div class="code-control" style="position:;"><span class="control-btn" style="display:;"><span class="control-text">show code</span> <span class="arrow-icon-wrap"><i class="arrow-icon" style="transform:rotate(90deg);"><svg version="1.1" viewBox="0 0 72 72" style="width: 10px; height: 10px;"><defs></defs><path d="M57.9,41.4L24.9,70.2c-3,2.6-7.5,2.3-10.2-0.7c-1.1-1.3-1.8-3-1.8-4.7V7.2c0-4,3.2-7.2,7.2-7.2c1.7,0,3.4,0.6,4.7,1.8l32.9,28.8c3,2.6,3.3,7.2,0.7,10.2C58.3,41,58.1,41.2,57.9,41.4z"></path></svg></i></span></span> <div class="online-wrapper"><form target="_blank" action="https://codepen.io/pen/define" method="post" class="demo-and-code-online-edit-wrapper"><input type="hidden" name="data" value="{&quot;js&quot;:&quot;new Vue({\n\tel: '#app', \n\tdata() {\n    return {\n      dialogVisible: false,\n      middle: true,\n      active: 0,\n    };\n  },\n  methods: {\n  }\n};\n})&quot;,&quot;css&quot;:&quot;&quot;,&quot;html&quot;:&quot;&lt;div id=\&quot;app\&quot;&gt;\n\n&lt;div class=\&quot;block\&quot;&gt;\n    &lt;meg-button\n      @click=\&quot;dialogVisible = true\&quot;&gt;\n      点击打开 Dialog\n    &lt;/meg-button&gt;\n\n    &lt;meg-dialog\n      title=\&quot;提示\&quot;\n      :visible.sync=\&quot;dialogVisible\&quot;\n      :middle=\&quot;false\&quot;\n      width=\&quot;30%\&quot;&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;span\n        slot=\&quot;footer\&quot;\n        class=\&quot;dialog-footer\&quot;&gt;\n        &lt;meg-button\n          type=\&quot;primary\&quot;\n          @click=\&quot;dialogVisible = false\&quot;&gt;确 定&lt;/meg-button&gt;\n        &lt;meg-button @click=\&quot;dialogVisible = false\&quot;&gt;取 消&lt;/meg-button&gt;\n      &lt;/span&gt;\n    &lt;/meg-dialog&gt;\n  &lt;/div&gt;\n\n&lt;/div&gt;&quot;,&quot;layout&quot;:&quot;left&quot;,&quot;editors&quot;:&quot;101&quot;,&quot;js_external&quot;:&quot;https://unpkg.com/vue/dist/vue.js&quot;,&quot;css_external&quot;:&quot;&quot;,&quot;js_pre_processor&quot;:&quot;babel&quot;}"> <!----> <!----> <button type="submit" data-tip="Codepen"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" xml:space="preserve"><g><path d="M250.001,0C111.927,0,0,111.927,0,250.001C0,388.077,111.927,500,250.001,500C388.073,500,500,388.077,500,250.001
+        C500,111.927,388.073,0,250.001,0z M250.001,458.943c-115.212,0-208.941-93.733-208.941-208.942
+        c0-115.208,93.729-208.941,208.941-208.941c115.208,0,208.938,93.733,208.938,208.941
+        C458.939,365.21,365.21,458.943,250.001,458.943z"></path> <path d="M404.462,201.172c-0.028-0.195-0.076-0.382-0.109-0.577c-0.065-0.374-0.135-0.748-0.232-1.114
+        c-0.057-0.22-0.138-0.431-0.206-0.642c-0.106-0.326-0.212-0.651-0.342-0.968c-0.091-0.22-0.196-0.439-0.297-0.651
+        c-0.14-0.3-0.285-0.593-0.452-0.877c-0.122-0.212-0.251-0.416-0.377-0.618c-0.18-0.277-0.362-0.546-0.562-0.806
+        c-0.146-0.194-0.3-0.39-0.454-0.577c-0.212-0.243-0.432-0.487-0.664-0.716c-0.174-0.178-0.346-0.357-0.528-0.521
+        c-0.244-0.219-0.496-0.431-0.752-0.633c-0.198-0.155-0.395-0.31-0.602-0.456c-0.078-0.049-0.146-0.114-0.22-0.163L257.369,97.656
+        c-4.464-2.976-10.274-2.976-14.738,0l-141.295,94.196c-0.073,0.049-0.142,0.114-0.219,0.163c-0.208,0.146-0.403,0.301-0.598,0.456
+        c-0.26,0.203-0.512,0.415-0.752,0.633c-0.187,0.164-0.357,0.342-0.533,0.521c-0.231,0.229-0.451,0.473-0.658,0.716
+        c-0.159,0.188-0.313,0.383-0.459,0.577c-0.195,0.26-0.383,0.529-0.557,0.806c-0.134,0.203-0.26,0.406-0.382,0.618
+        c-0.163,0.284-0.309,0.577-0.451,0.877c-0.102,0.211-0.208,0.431-0.297,0.651c-0.13,0.317-0.236,0.642-0.341,0.968
+        c-0.07,0.211-0.146,0.422-0.208,0.642c-0.097,0.366-0.162,0.74-0.231,1.114c-0.032,0.195-0.081,0.382-0.106,0.577
+        c-0.077,0.569-0.122,1.146-0.122,1.732v94.197c0,0.585,0.044,1.162,0.122,1.74c0.025,0.188,0.074,0.382,0.106,0.568
+        c0.069,0.374,0.134,0.748,0.231,1.114c0.062,0.22,0.138,0.432,0.208,0.643c0.105,0.324,0.211,0.65,0.341,0.975
+        c0.089,0.222,0.195,0.433,0.297,0.645c0.143,0.3,0.289,0.592,0.451,0.885c0.122,0.204,0.248,0.406,0.382,0.61
+        c0.174,0.276,0.362,0.545,0.557,0.806c0.146,0.203,0.301,0.391,0.459,0.577c0.208,0.243,0.427,0.488,0.658,0.716
+        c0.175,0.178,0.346,0.357,0.533,0.52c0.24,0.221,0.492,0.432,0.752,0.635c0.195,0.155,0.391,0.31,0.598,0.454
+        c0.077,0.05,0.146,0.115,0.219,0.163l141.295,94.197c2.231,1.487,4.802,2.236,7.371,2.236c2.566,0,5.135-0.749,7.368-2.236
+        l141.295-94.197c0.074-0.048,0.142-0.113,0.22-0.163c0.207-0.145,0.403-0.299,0.602-0.454c0.256-0.203,0.508-0.414,0.752-0.635
+        c0.183-0.162,0.354-0.342,0.528-0.52c0.232-0.228,0.452-0.473,0.664-0.716c0.154-0.187,0.308-0.374,0.454-0.577
+        c0.2-0.261,0.383-0.529,0.562-0.806c0.126-0.204,0.255-0.406,0.377-0.61c0.167-0.293,0.312-0.585,0.452-0.885
+        c0.101-0.212,0.206-0.423,0.297-0.645c0.13-0.324,0.235-0.65,0.342-0.975c0.068-0.211,0.149-0.423,0.206-0.643
+        c0.098-0.366,0.167-0.74,0.232-1.114c0.033-0.187,0.081-0.381,0.109-0.568c0.073-0.578,0.119-1.155,0.119-1.74v-94.197
+        C404.581,202.318,404.535,201.741,404.462,201.172z M263.286,133.533l104.088,69.387l-46.493,31.103l-57.595-38.527V133.533z
+         M236.715,133.533v61.963l-57.592,38.527l-46.497-31.103L236.715,133.533z M121.99,227.771l33.238,22.231l-33.238,22.233V227.771z
+         M236.715,366.471l-104.088-69.388l46.497-31.094l57.592,38.52V366.471z M250.001,281.431l-46.988-31.429l46.988-31.428
+        l46.985,31.428L250.001,281.431z M263.286,366.471v-61.962l57.595-38.52l46.493,31.094L263.286,366.471z M378.01,272.234
+        l-33.233-22.233l33.233-22.231V272.234z"></path></g></svg></button></form><form target="_blank" action="https://jsfiddle.net/api/post/library/pure" method="post" class="demo-and-code-online-edit-wrapper"><!----> <input type="hidden" name="js" value="export default {
+  data() {
+    return {
+      dialogVisible: false,
+      middle: true,
+      active: 0,
+    };
+  },
+  methods: {
+  }
+};"> <input type="hidden" name="css" value=""> <input type="hidden" name="html" value="&lt;div class=&quot;block&quot;&gt;
+    &lt;meg-button
+      @click=&quot;dialogVisible = true&quot;&gt;
+      点击打开 Dialog
+    &lt;/meg-button&gt;
+
+    &lt;meg-dialog
+      title=&quot;提示&quot;
+      :visible.sync=&quot;dialogVisible&quot;
+      :middle=&quot;false&quot;
+      width=&quot;30%&quot;&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;span
+        slot=&quot;footer&quot;
+        class=&quot;dialog-footer&quot;&gt;
+        &lt;meg-button
+          type=&quot;primary&quot;
+          @click=&quot;dialogVisible = false&quot;&gt;确 定&lt;/meg-button&gt;
+        &lt;meg-button @click=&quot;dialogVisible = false&quot;&gt;取 消&lt;/meg-button&gt;
+      &lt;/span&gt;
+    &lt;/meg-dialog&gt;
+  &lt;/div&gt;"> <input type="hidden" name="panel_js" value="3"> <input type="hidden" name="resources" value="https://unpkg.com/vue/dist/vue.js"> <!----> <button type="submit" data-tip="JSFiddle"><svg t="1547088289967" viewBox="0 0 1170 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1952" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon"><path d="M1028.571429 441.142857q63.428571 26.285714 102.571428 83.142857T1170.285714 650.857143q0 93.714286-67.428571 160.285714T940 877.714286q-2.285714 0-6.571429-0.285715t-6-0.285714H232q-97.142857-5.714286-164.571429-71.714286T0 645.142857q0-62.857143 31.428571-116t84-84q-6.857143-22.285714-6.857142-46.857143 0-65.714286 46.857142-112t113.714286-46.285714q54.285714 0 98.285714 33.142857 42.857143-88 127.142858-141.714286t186.571428-53.714285q94.857143 0 174.857143 46T982.571429 248.571429t46.571428 172q0 3.428571-0.285714 10.285714t-0.285714 10.285714zM267.428571 593.142857q0 69.714286 48 110.285714t118.857143 40.571429q78.285714 0 137.142857-56.571429-9.142857-11.428571-27.142857-32.285714T519.428571 626.285714q-38.285714 37.142857-82.285714 37.142857-31.428571 0-53.428571-19.142857T361.714286 594.285714q0-30.285714 22-49.714285t52.285714-19.428572q25.142857 0 48.285714 12t41.714286 31.428572 37.142857 42.857142 39.428572 46.857143 44 42.857143 55.428571 31.428572 69.428571 12q69.142857 0 116.857143-40.857143T936 594.857143q0-69.142857-48-109.714286t-118.285714-40.571428q-81.714286 0-137.714286 55.428571l53.142857 61.714286q37.714286-36.571429 81.142857-36.571429 29.714286 0 52.571429 18.857143t22.857143 48q0 32.571429-21.142857 52.285714t-53.714286 19.714286q-24.571429 0-47.142857-12t-41.142857-31.428571-37.428572-42.857143-39.714286-46.857143-44.285714-42.857143-55.142857-31.428571T434.285714 444.571429q-69.714286 0-118.285714 40.285714T267.428571 593.142857z" p-id="1953"></path></svg></button></form><form target="_blank" action="https://codesandbox.io/api/v1/sandboxes/define" method="post" class="demo-and-code-online-edit-wrapper"><!----> <!----> <input type="hidden" name="parameters" value="N4IgZglgNgpgziAXKAtgQwgOwHQCsHIgDGA9pgC4wVIgA6mEKADiQE7kAEAagK4wdhWJFBwDkANz6j6jFuw4BBJkwFCRo7AHolTbJJjTM9TDADu3PgApg9DnY4woiMQGI0y0QBpb9ysyholM6iADw6mgB8Xj52pMxkVORwzsCKyhwAvt6YGQCUIFkgOnp8SKCkFIk0IX5MAZQR9PQhACYQ4hxEAXBwALy0IABGUCREANYDjZj2HCEoMADmALSDPOTkZDH2AAJdEOP9IG1oIwtcEHAQw_y9HOSsfJNbdoCdDoDfioDKRoAA-hwAIhAnEgLLYhTTzZardZkKYg8FLY6nZ53CDkWCHQALxoAuTwGSMQ4guV1g2DgAE9MERDgigedLtccdMZhxECgIC0WmiBmATnAYPTGRxTKzyAALQ4AZgADABSJ4MmatdoRQCb8YB6M0AAHKAVutAIfygHsDUFtcRTfkKw2qzW6_WKpEm5Xq7V6zQGo2Mm1m-2Ww3Wp1ui2Oq1y-yuu2-p1exU-h2hgN2IPmyP-43e4Pxz3R2ZJuMe53yjPuv2pxPh5NZsOm4v57OB3MhhMu6spysx-sltOxvNRwtlzMV0u27sdutF_u1nND9sjqtjmsFwdd8cz0dz6eN9NThu9iMtzt9-crtvLjflgeLncH1vNnvntdb2en9dXpf37eby_Po8TpvX1-3l_HyePm8T1_D9VwA78gPfBdAzgJg0CMNM7DgEZyEOMASBIShWD5flOm6PoBipZY0IwmAsJAFcYzhSENngnDfBJJgYEOJhWEYNBWBJbC6N2KB9jGSkAVOGlCRuARuV5cjADsPDhACztUEqLWGiKNmBSoWmHi-IEwEzgJa4OFuLkoB5SZADXlDhAAjbeTFhWRToWtTQYLgysrOWQjnRbZpNFqeoYBhTAQjgIhWKYcgphgAAPOROBaGAuR4KBOBsBkWkCNBLFyDgkpmVgYHIHhWGmLLGUI4TrmcQyeWyfkWTZWBnHuPgqsZNAiHIdoYGcCUmrsDIAG4fCyHx5hFEgWmSTKBvoPrPMC4LQqafy4HIElYD80ElpW3z6AKTwQCwGLwuwYVyBQKAymIMhKGoRA6H8g0OFZQ53CYSYsx2kBYPGNAFhgPA4DIc6Kiu8hzpixjMBi8kIHgc79BoHyloKDJkYyIA"> <input type="hidden" name="query" value="module=App.vue"> <!----> <!----> <button type="submit" data-tip="CodeSandbox"><svg t="1547088313123" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2783" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon"><path d="M737.828571 166.857143l0.457143-0.228572h0.228572L512 36.571429 285.6 166.628571h-0.228571l0.8 0.342858L100 274.285714v475.428572L512 987.428571l412-237.714285V274.285714l-186.171429-107.428571zM478.514286 890.971429L314.971429 796.571429V637.028571L166.857143 552.914286V353.028571l311.657143 179.771429v358.171429zM199.085714 294.285714l153.942857-88.914285 158.742858 91.085714 158.971428-91.314286 154.514286 89.142857-313.028572 180.571429-313.142857-180.571429zM857.142857 553.485714l-147.2 83.542857v158.971429l-164.457143 94.857143V533.028571L857.142857 353.257143v200.228571z" p-id="2784"></path></svg></button></form></div></div></section> <h3 id="头部注入内容"><a href="#头部注入内容" class="header-anchor">#</a> 头部注入内容</h3> <section class="demo-and-code-wrapper"><div class="demo-wrapper"><div class="block" data-v-0c477e29><button type="button" class="meg-button meg-button--default" data-v-0c477e29><!----> <!----> <span>
+    点击打开 Dialog
+  </span></button> <div class="meg-dialog__wrapper is-middle" style="display:none;" data-v-0c477e29><div role="dialog" aria-modal="true" aria-label="dialog" class="meg-dialog"><div class="meg-dialog__header"><div style="padding:20px 50px 0 0;" data-v-0c477e29><div class="meg-steps meg-steps--horizontal meg-steps--finish" data-v-0c477e29><div class="meg-step is-horizontal" style="flex-basis:Infinity%;margin-right:0px;" data-v-0c477e29><div class="meg-step__head is-"><div class="meg-step__line" style="margin-right:0px;"><i class="meg-step__line-inner"></i></div> <div class="meg-step__icon is-text"><div class="meg-step__icon-inner">
+          0
+        </div></div></div> <div class="meg-step__main"><div class="meg-step__title is-">
+        步骤 1
+      </div> <div class="meg-step__description is-">
+        
+      </div></div></div> <div class="meg-step is-horizontal" style="flex-basis:100%;margin-right:0px;" data-v-0c477e29><div class="meg-step__head is-"><div class="meg-step__line" style="margin-right:0px;"><i class="meg-step__line-inner"></i></div> <div class="meg-step__icon is-text"><div class="meg-step__icon-inner">
+          0
+        </div></div></div> <div class="meg-step__main"><div class="meg-step__title is-">
+        步骤 2
+      </div> <div class="meg-step__description is-">
+        
+      </div></div></div> <div class="meg-step is-horizontal" style="flex-basis:50%;margin-right:0px;" data-v-0c477e29><div class="meg-step__head is-"><div class="meg-step__line" style="margin-right:0px;"><i class="meg-step__line-inner"></i></div> <div class="meg-step__icon is-text"><div class="meg-step__icon-inner">
+          0
+        </div></div></div> <div class="meg-step__main"><div class="meg-step__title is-">
+        步骤 3
+      </div> <div class="meg-step__description is-">
+        
+      </div></div></div></div></div></div> <button type="button" aria-label="Close" class="meg-dialog__header-btn"><svg data-svg-icon="close_1" version="1.1" viewBox="0 0 32 32" class="meg-dialog__close meg-icon-close meg-icon meg-fill"><path pid="0" _fill="#435068" d="M29.822 4.667l-2.489-2.489L16 13.467 4.667 2.178 2.178 4.667 13.467 16 2.178 27.333l2.489 2.489L16 18.533l11.333 11.289 2.489-2.489L18.533 16z"/></svg></button> <!----> <div class="meg-dialog__footer"><span class="dialog-footer" data-v-0c477e29><button type="button" class="meg-button meg-button--primary" data-v-0c477e29><!----> <!----> <span>下一步</span></button> <button type="button" class="meg-button meg-button--default" data-v-0c477e29><!----> <!----> <span>取 消</span></button></span></div></div></div></div></div> <div class="code-wrapper" style="max-height:0px;"><div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>block<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-button</span>
+      <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialogVisible = true<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      点击打开 Dialog
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-button</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-dialog</span>
+      <span class="token attr-name">:middle</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>true<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">:visible.sync</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialogVisible<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name"><span class="token namespace">v-slot:</span>title</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value"><span class="token property">padding</span><span class="token punctuation">:</span> 20px 50px 0 0<span class="token punctuation">;</span></span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-steps</span>
+            <span class="token attr-name">:active</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>active<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-step</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>步骤 1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-step</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-step</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>步骤 2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-step</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-step</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>步骤 3<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-step</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-steps</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span>
+        <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>footer<span class="token punctuation">&quot;</span></span>
+        <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialog-footer<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-button</span>
+          <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>primary<span class="token punctuation">&quot;</span></span>
+          <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>active+=1<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>下一步<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-button</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meg-button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>dialogVisible = false<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>取 消<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-button</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meg-dialog</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      dialogVisible<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      middle<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      active<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>scss<span class="token punctuation">&quot;</span></span> <span class="token attr-name">scoped</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">.block</span> <span class="token punctuation">{</span>
+    <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div> <div class="code-control" style="position:;"><span class="control-btn" style="display:;"><span class="control-text">show code</span> <span class="arrow-icon-wrap"><i class="arrow-icon" style="transform:rotate(90deg);"><svg version="1.1" viewBox="0 0 72 72" style="width: 10px; height: 10px;"><defs></defs><path d="M57.9,41.4L24.9,70.2c-3,2.6-7.5,2.3-10.2-0.7c-1.1-1.3-1.8-3-1.8-4.7V7.2c0-4,3.2-7.2,7.2-7.2c1.7,0,3.4,0.6,4.7,1.8l32.9,28.8c3,2.6,3.3,7.2,0.7,10.2C58.3,41,58.1,41.2,57.9,41.4z"></path></svg></i></span></span> <div class="online-wrapper"><form target="_blank" action="https://codepen.io/pen/define" method="post" class="demo-and-code-online-edit-wrapper"><input type="hidden" name="data" value="{&quot;js&quot;:&quot;new Vue({\n\tel: '#app', \n\tdata() {\n    return {\n      dialogVisible: false,\n      middle: true,\n      active: 0,\n    };\n  },\n  methods: {\n  }\n};\n})&quot;,&quot;css&quot;:&quot;&quot;,&quot;html&quot;:&quot;&lt;div id=\&quot;app\&quot;&gt;\n\n&lt;div class=\&quot;block\&quot;&gt;\n    &lt;meg-button\n      @click=\&quot;dialogVisible = true\&quot;&gt;\n      点击打开 Dialog\n    &lt;/meg-button&gt;\n\n    &lt;meg-dialog\n      :middle=\&quot;true\&quot;\n      :visible.sync=\&quot;dialogVisible\&quot;&gt;\n      &lt;template v-slot:title&gt;\n        &lt;div style=\&quot;padding: 20px 50px 0 0;\&quot;&gt;\n          &lt;meg-steps\n            :active=\&quot;active\&quot;&gt;\n            &lt;meg-step title=\&quot;步骤 1\&quot;&gt;&lt;/meg-step&gt;\n            &lt;meg-step title=\&quot;步骤 2\&quot;&gt;&lt;/meg-step&gt;\n            &lt;meg-step title=\&quot;步骤 3\&quot;&gt;&lt;/meg-step&gt;\n          &lt;/meg-steps&gt;\n        &lt;/div&gt;\n      &lt;/template&gt;\n      &lt;div&gt;这是一段信息&lt;/div&gt;\n      &lt;span\n        slot=\&quot;footer\&quot;\n        class=\&quot;dialog-footer\&quot;&gt;\n        &lt;meg-button\n          type=\&quot;primary\&quot;\n          @click=\&quot;active+=1\&quot;&gt;下一步&lt;/meg-button&gt;\n        &lt;meg-button @click=\&quot;dialogVisible = false\&quot;&gt;取 消&lt;/meg-button&gt;\n      &lt;/span&gt;\n    &lt;/meg-dialog&gt;\n  &lt;/div&gt;\n\n&lt;/div&gt;&quot;,&quot;layout&quot;:&quot;left&quot;,&quot;editors&quot;:&quot;101&quot;,&quot;js_external&quot;:&quot;https://unpkg.com/vue/dist/vue.js&quot;,&quot;css_external&quot;:&quot;&quot;,&quot;js_pre_processor&quot;:&quot;babel&quot;}"> <!----> <!----> <button type="submit" data-tip="Codepen"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 500 500" xml:space="preserve"><g><path d="M250.001,0C111.927,0,0,111.927,0,250.001C0,388.077,111.927,500,250.001,500C388.073,500,500,388.077,500,250.001
+        C500,111.927,388.073,0,250.001,0z M250.001,458.943c-115.212,0-208.941-93.733-208.941-208.942
+        c0-115.208,93.729-208.941,208.941-208.941c115.208,0,208.938,93.733,208.938,208.941
+        C458.939,365.21,365.21,458.943,250.001,458.943z"></path> <path d="M404.462,201.172c-0.028-0.195-0.076-0.382-0.109-0.577c-0.065-0.374-0.135-0.748-0.232-1.114
+        c-0.057-0.22-0.138-0.431-0.206-0.642c-0.106-0.326-0.212-0.651-0.342-0.968c-0.091-0.22-0.196-0.439-0.297-0.651
+        c-0.14-0.3-0.285-0.593-0.452-0.877c-0.122-0.212-0.251-0.416-0.377-0.618c-0.18-0.277-0.362-0.546-0.562-0.806
+        c-0.146-0.194-0.3-0.39-0.454-0.577c-0.212-0.243-0.432-0.487-0.664-0.716c-0.174-0.178-0.346-0.357-0.528-0.521
+        c-0.244-0.219-0.496-0.431-0.752-0.633c-0.198-0.155-0.395-0.31-0.602-0.456c-0.078-0.049-0.146-0.114-0.22-0.163L257.369,97.656
+        c-4.464-2.976-10.274-2.976-14.738,0l-141.295,94.196c-0.073,0.049-0.142,0.114-0.219,0.163c-0.208,0.146-0.403,0.301-0.598,0.456
+        c-0.26,0.203-0.512,0.415-0.752,0.633c-0.187,0.164-0.357,0.342-0.533,0.521c-0.231,0.229-0.451,0.473-0.658,0.716
+        c-0.159,0.188-0.313,0.383-0.459,0.577c-0.195,0.26-0.383,0.529-0.557,0.806c-0.134,0.203-0.26,0.406-0.382,0.618
+        c-0.163,0.284-0.309,0.577-0.451,0.877c-0.102,0.211-0.208,0.431-0.297,0.651c-0.13,0.317-0.236,0.642-0.341,0.968
+        c-0.07,0.211-0.146,0.422-0.208,0.642c-0.097,0.366-0.162,0.74-0.231,1.114c-0.032,0.195-0.081,0.382-0.106,0.577
+        c-0.077,0.569-0.122,1.146-0.122,1.732v94.197c0,0.585,0.044,1.162,0.122,1.74c0.025,0.188,0.074,0.382,0.106,0.568
+        c0.069,0.374,0.134,0.748,0.231,1.114c0.062,0.22,0.138,0.432,0.208,0.643c0.105,0.324,0.211,0.65,0.341,0.975
+        c0.089,0.222,0.195,0.433,0.297,0.645c0.143,0.3,0.289,0.592,0.451,0.885c0.122,0.204,0.248,0.406,0.382,0.61
+        c0.174,0.276,0.362,0.545,0.557,0.806c0.146,0.203,0.301,0.391,0.459,0.577c0.208,0.243,0.427,0.488,0.658,0.716
+        c0.175,0.178,0.346,0.357,0.533,0.52c0.24,0.221,0.492,0.432,0.752,0.635c0.195,0.155,0.391,0.31,0.598,0.454
+        c0.077,0.05,0.146,0.115,0.219,0.163l141.295,94.197c2.231,1.487,4.802,2.236,7.371,2.236c2.566,0,5.135-0.749,7.368-2.236
+        l141.295-94.197c0.074-0.048,0.142-0.113,0.22-0.163c0.207-0.145,0.403-0.299,0.602-0.454c0.256-0.203,0.508-0.414,0.752-0.635
+        c0.183-0.162,0.354-0.342,0.528-0.52c0.232-0.228,0.452-0.473,0.664-0.716c0.154-0.187,0.308-0.374,0.454-0.577
+        c0.2-0.261,0.383-0.529,0.562-0.806c0.126-0.204,0.255-0.406,0.377-0.61c0.167-0.293,0.312-0.585,0.452-0.885
+        c0.101-0.212,0.206-0.423,0.297-0.645c0.13-0.324,0.235-0.65,0.342-0.975c0.068-0.211,0.149-0.423,0.206-0.643
+        c0.098-0.366,0.167-0.74,0.232-1.114c0.033-0.187,0.081-0.381,0.109-0.568c0.073-0.578,0.119-1.155,0.119-1.74v-94.197
+        C404.581,202.318,404.535,201.741,404.462,201.172z M263.286,133.533l104.088,69.387l-46.493,31.103l-57.595-38.527V133.533z
+         M236.715,133.533v61.963l-57.592,38.527l-46.497-31.103L236.715,133.533z M121.99,227.771l33.238,22.231l-33.238,22.233V227.771z
+         M236.715,366.471l-104.088-69.388l46.497-31.094l57.592,38.52V366.471z M250.001,281.431l-46.988-31.429l46.988-31.428
+        l46.985,31.428L250.001,281.431z M263.286,366.471v-61.962l57.595-38.52l46.493,31.094L263.286,366.471z M378.01,272.234
+        l-33.233-22.233l33.233-22.231V272.234z"></path></g></svg></button></form><form target="_blank" action="https://jsfiddle.net/api/post/library/pure" method="post" class="demo-and-code-online-edit-wrapper"><!----> <input type="hidden" name="js" value="export default {
+  data() {
+    return {
+      dialogVisible: false,
+      middle: true,
+      active: 0,
+    };
+  },
+  methods: {
+  }
+};"> <input type="hidden" name="css" value=""> <input type="hidden" name="html" value="&lt;div class=&quot;block&quot;&gt;
+    &lt;meg-button
+      @click=&quot;dialogVisible = true&quot;&gt;
+      点击打开 Dialog
+    &lt;/meg-button&gt;
+
+    &lt;meg-dialog
+      :middle=&quot;true&quot;
+      :visible.sync=&quot;dialogVisible&quot;&gt;
+      &lt;template v-slot:title&gt;
+        &lt;div style=&quot;padding: 20px 50px 0 0;&quot;&gt;
+          &lt;meg-steps
+            :active=&quot;active&quot;&gt;
+            &lt;meg-step title=&quot;步骤 1&quot;&gt;&lt;/meg-step&gt;
+            &lt;meg-step title=&quot;步骤 2&quot;&gt;&lt;/meg-step&gt;
+            &lt;meg-step title=&quot;步骤 3&quot;&gt;&lt;/meg-step&gt;
+          &lt;/meg-steps&gt;
+        &lt;/div&gt;
+      &lt;/template&gt;
+      &lt;div&gt;这是一段信息&lt;/div&gt;
+      &lt;span
+        slot=&quot;footer&quot;
+        class=&quot;dialog-footer&quot;&gt;
+        &lt;meg-button
+          type=&quot;primary&quot;
+          @click=&quot;active+=1&quot;&gt;下一步&lt;/meg-button&gt;
+        &lt;meg-button @click=&quot;dialogVisible = false&quot;&gt;取 消&lt;/meg-button&gt;
+      &lt;/span&gt;
+    &lt;/meg-dialog&gt;
+  &lt;/div&gt;"> <input type="hidden" name="panel_js" value="3"> <input type="hidden" name="resources" value="https://unpkg.com/vue/dist/vue.js"> <!----> <button type="submit" data-tip="JSFiddle"><svg t="1547088289967" viewBox="0 0 1170 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1952" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon"><path d="M1028.571429 441.142857q63.428571 26.285714 102.571428 83.142857T1170.285714 650.857143q0 93.714286-67.428571 160.285714T940 877.714286q-2.285714 0-6.571429-0.285715t-6-0.285714H232q-97.142857-5.714286-164.571429-71.714286T0 645.142857q0-62.857143 31.428571-116t84-84q-6.857143-22.285714-6.857142-46.857143 0-65.714286 46.857142-112t113.714286-46.285714q54.285714 0 98.285714 33.142857 42.857143-88 127.142858-141.714286t186.571428-53.714285q94.857143 0 174.857143 46T982.571429 248.571429t46.571428 172q0 3.428571-0.285714 10.285714t-0.285714 10.285714zM267.428571 593.142857q0 69.714286 48 110.285714t118.857143 40.571429q78.285714 0 137.142857-56.571429-9.142857-11.428571-27.142857-32.285714T519.428571 626.285714q-38.285714 37.142857-82.285714 37.142857-31.428571 0-53.428571-19.142857T361.714286 594.285714q0-30.285714 22-49.714285t52.285714-19.428572q25.142857 0 48.285714 12t41.714286 31.428572 37.142857 42.857142 39.428572 46.857143 44 42.857143 55.428571 31.428572 69.428571 12q69.142857 0 116.857143-40.857143T936 594.857143q0-69.142857-48-109.714286t-118.285714-40.571428q-81.714286 0-137.714286 55.428571l53.142857 61.714286q37.714286-36.571429 81.142857-36.571429 29.714286 0 52.571429 18.857143t22.857143 48q0 32.571429-21.142857 52.285714t-53.714286 19.714286q-24.571429 0-47.142857-12t-41.142857-31.428571-37.428572-42.857143-39.714286-46.857143-44.285714-42.857143-55.142857-31.428571T434.285714 444.571429q-69.714286 0-118.285714 40.285714T267.428571 593.142857z" p-id="1953"></path></svg></button></form><form target="_blank" action="https://codesandbox.io/api/v1/sandboxes/define" method="post" class="demo-and-code-online-edit-wrapper"><!----> <!----> <input type="hidden" name="parameters" value="N4IgZglgNgpgziAXKAtgQwgOwHQCsHIgDGA9pgC4wVIgA6mEKADiQE7kAEAagK4wdhWJFBwDkANz6j6jFuw4BBJkwFCRo7AHolTbJJjTM9TDADu3PgApg9DnY4woiMQGI0y0QBpb9ysyholM6iADw6mgB8Xj52pMxkVORwzsCKyhwAvt6YGQCUIFkgOnp8SKCkFIk0IX5MAZQR9PQhACYQ4hxEAXBwALy0IABGUCREANYDjZj2HCEoMADmALSDPOTkZDH2AAJdEOP9IG1oIwtcEHAQw_y9HOSsfJNbdoCdDoDfioDKRoAA-hwAIhAnEgLLYhTTzZardZkKYg8FLY6nZ4cRAoCAtFqwQ73R50aYzZHiC5XWDYOAAT0wREOCKB50u1yeeJmNRg_kC_HESzgI3IiHIEHIsCm-PsrXaHDg5DJmIGTDQ6KwC2cACYAAxMAAeHAArOqtaqOKqANyMkXMuGSmBMOBIkWINBEfniGCHB1OmCms3mxZcygqfmCl0DQCm1oASrI4AEZJqCLX7hV7RbGrXcBTKQGGOMro2CfZamPGE7Mk_7U0H0-GAMzZ4sFs0x3N-uC15maNriZuzTS1eowDti9uATfjAPRmgAA5QCt1oBD-UA9gagtt9uByoxM_HckjkQ5gEhrmCsAa2zrdPoDGnLTfb3cgDt2OY-yEbJeFqVMMtMViMNCsMl75ci3ZQfZjK6jrtDAADUvRRpegDQciOwb1hCaz3leRa3ohZAcH-AHUgCpx0sSNwCCccAepegBryhwgARtvBKxoZgfaaAuaB0SCObLCe8azu0MKYKC3bstxIRwEQb5MOQUwwBqcicC0MBgGgPBQJwNh4i0gRoJYuQcMpMysDA5A8Kw0zafiJ54dczhyVAxHZCKqLorAzjYjANn4m6IHOKqLl2BkJp4lkPjzOQAAWJAtMkWk-Bk9A-c0DHCRAokCZK0q9k0PEMVKQr0AUnggFgMkatgQXkCgUBlMQZCUNQiC4v2HBoq6yjZnOOUgHK4xoAsMB4HAZDlRUVXkOVMnPpgMmUhA8DlfoNA9pKBQZItGRAA"> <input type="hidden" name="query" value="module=App.vue"> <!----> <!----> <button type="submit" data-tip="CodeSandbox"><svg t="1547088313123" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2783" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon"><path d="M737.828571 166.857143l0.457143-0.228572h0.228572L512 36.571429 285.6 166.628571h-0.228571l0.8 0.342858L100 274.285714v475.428572L512 987.428571l412-237.714285V274.285714l-186.171429-107.428571zM478.514286 890.971429L314.971429 796.571429V637.028571L166.857143 552.914286V353.028571l311.657143 179.771429v358.171429zM199.085714 294.285714l153.942857-88.914285 158.742858 91.085714 158.971428-91.314286 154.514286 89.142857-313.028572 180.571429-313.142857-180.571429zM857.142857 553.485714l-147.2 83.542857v158.971429l-164.457143 94.857143V533.028571L857.142857 353.257143v200.228571z" p-id="2784"></path></svg></button></form></div></div></section> <h3 id="attributes"><a href="#attributes" class="header-anchor">#</a> Attributes</h3> <table><thead><tr><th>参数</th> <th>说明</th> <th>类型</th> <th>可选值</th> <th>默认值</th></tr></thead> <tbody><tr><td>visible</td> <td>是否显示 Dialog，支持 .sync 修饰符</td> <td>boolean</td> <td>—</td> <td>false</td></tr> <tr><td>title</td> <td>Dialog 的标题，也可通过具名 slot （见下表）传入，都不传则头部隐藏</td> <td>string</td> <td>—</td> <td>—</td></tr> <tr><td>width</td> <td>Dialog 的宽度</td> <td>string</td> <td>—</td> <td>50%</td></tr> <tr><td>fullscreen</td> <td>是否为全屏 Dialog</td> <td>boolean</td> <td>—</td> <td>false</td></tr> <tr><td>middle</td> <td>严格上下居中（此方式会造成弹窗过高时，顶部被隐藏的问题）</td> <td>boolean</td> <td>—</td> <td>true</td></tr> <tr><td>top</td> <td>Dialog CSS 中的 margin-top 值(middle为false时才有效)</td> <td>string</td> <td>—</td> <td>15vh</td></tr> <tr><td>modal</td> <td>是否需要遮罩层</td> <td>boolean</td> <td>—</td> <td>true</td></tr> <tr><td>modal-append-to-body</td> <td>遮罩层是否插入至 body 元素上，若为 false，则遮罩层会插入至 Dialog 的父元素上</td> <td>boolean</td> <td>—</td> <td>true</td></tr> <tr><td>append-to-body</td> <td>Dialog 自身是否插入至 body 元素上。嵌套的 Dialog 必须指定该属性并赋值为 true</td> <td>boolean</td> <td>—</td> <td>false</td></tr> <tr><td>lock-scroll</td> <td>是否在 Dialog 出现时将 body 滚动锁定</td> <td>boolean</td> <td>—</td> <td>true</td></tr> <tr><td>custom-class</td> <td>Dialog 的自定义类名</td> <td>string</td> <td>—</td> <td>—</td></tr> <tr><td>close-on-click-modal</td> <td>是否可以通过点击 modal 关闭 Dialog</td> <td>boolean</td> <td>—</td> <td>true</td></tr> <tr><td>close-on-press-escape</td> <td>是否可以通过按下 ESC 关闭 Dialog</td> <td>boolean</td> <td>—</td> <td>true</td></tr> <tr><td>show-close</td> <td>是否显示关闭按钮</td> <td>boolean</td> <td>—</td> <td>true</td></tr> <tr><td>before-close</td> <td>关闭前的回调，会暂停 Dialog 的关闭</td> <td>function(done)，done 用于关闭 Dialog</td> <td>—</td> <td>—</td></tr> <tr><td>center</td> <td>是否对头部和底部采用居中布局</td> <td>boolean</td> <td>—</td> <td>false</td></tr></tbody></table> <h3 id="slot"><a href="#slot" class="header-anchor">#</a> Slot</h3> <table><thead><tr><th>name</th> <th>说明</th></tr></thead> <tbody><tr><td>—</td> <td>Dialog 的内容</td></tr> <tr><td>title</td> <td>Dialog 标题区的内容</td></tr> <tr><td>footer</td> <td>Dialog 按钮操作区的内容</td></tr></tbody></table> <h3 id="events"><a href="#events" class="header-anchor">#</a> Events</h3> <table><thead><tr><th>事件名称</th> <th>说明</th> <th>回调参数</th></tr></thead> <tbody><tr><td>open</td> <td>Dialog 打开的回调</td> <td>—</td></tr> <tr><td>opened</td> <td>Dialog 打开动画结束时的回调</td> <td>—</td></tr> <tr><td>close</td> <td>Dialog 关闭的回调</td> <td>—</td></tr> <tr><td>closed</td> <td>Dialog 关闭动画结束时的回调</td> <td>—</td></tr></tbody></table> <h3 id="_1-x-迁移指南"><a href="#_1-x-迁移指南" class="header-anchor">#</a> 1.x 迁移指南</h3> <table><thead><tr><th>改变</th> <th>说明</th></tr></thead> <tbody><tr><td>[props] footer不内置默认按钮，相关配置和事件全部取消，需通过  footer slot 传入自定义按钮</td> <td>--</td></tr></tbody></table></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/ui-docs/component/time-picker/" class="prev">TimePicker 时间选择器</a></span> <span class="next"><a href="/ui-docs/component/double-card/">DoubleCard 双人像卡片</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/ui-docs/assets/js/app.57f4804f.js" defer></script><script src="/ui-docs/assets/js/2.fd898690.js" defer></script><script src="/ui-docs/assets/js/28.d060eea9.js" defer></script>
+  </body>
+</html>
